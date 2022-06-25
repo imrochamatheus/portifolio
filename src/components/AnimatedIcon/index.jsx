@@ -1,9 +1,15 @@
 import { Box } from "@chakra-ui/react";
+import { useState } from "react";
 import Lottie from "react-lottie";
 
-const AnimatedIcon = ({ h, w, animationData, stoped, color }) => {
+const AnimatedIcon = ({ h, w, animationData, color }) => {
+  const [stoped, setStoped] = useState(true);
+
+  const changeStoppedState = () => setStoped(false);
+  const setTrue = () => setStoped(true);
+
   const defaultOptions = {
-    loop: false,
+    loop: true,
     autoplay: false,
     animationData: animationData,
     rendererSettings: {
@@ -12,7 +18,7 @@ const AnimatedIcon = ({ h, w, animationData, stoped, color }) => {
   };
 
   return (
-    <Box mt={-2}>
+    <Box mt={-2} onMouseOver={changeStoppedState} onMouseLeave={setTrue}>
       <Lottie
         options={defaultOptions}
         height={h}

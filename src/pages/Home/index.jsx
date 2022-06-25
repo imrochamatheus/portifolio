@@ -1,11 +1,10 @@
-import { Flex, Heading, Stack, StackItem } from "@chakra-ui/react";
+import { Flex, Heading, SlideFade, Stack, StackItem } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 
 import Nav from "../../components/Nav";
 import Typewriter from "typewriter-effect";
 
 import profile from "../../assets/img/home-animation.gif";
-import { motion } from "framer-motion";
 
 const Home = () => {
   return (
@@ -17,22 +16,15 @@ const Home = () => {
       align="center"
     >
       <Nav />
+
       <Stack
         direction={{ base: "column", md: "row" }}
         spacing={5}
         display="flex"
         align="center"
       >
-        <StackItem>
-          <Image
-            src={profile}
-            w={{ base: 250, md: 300 }}
-            as={motion.img}
-            initial={{ marginLeft: "-50%" }}
-            animate={{ marginLeft: 0 }}
-            exit={{ marginLeft: "-500px" }}
-            transition="all .1s"
-          />
+        <StackItem as={SlideFade} in={true} offsetX="-50%" transition="all 1s">
+          <Image src={profile} w={{ base: 250, md: 300 }} />
         </StackItem>
 
         <StackItem>
