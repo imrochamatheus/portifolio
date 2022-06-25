@@ -18,9 +18,12 @@ const Nav = () => {
       justify="center"
       position="absolute"
       bottom={0}
-      color="rgb(196, 196, 196)"
+      w="100%"
+      color="whiteAlpha.700"
+      borderTop="1px solid"
+      borderColor="whiteAlpha.400"
     >
-      <Breadcrumb fontWeight="medium" fontSize="sm" spacing={5} separator="">
+      <Breadcrumb fontWeight="medium" fontSize="sm" spacing={8} separator="">
         {sections.map(({ label, url, icon }, i) => (
           <BreadcrumbItem key={i}>
             <BreadcrumbLink as={Link} to={url} _hover={{ color: "purple.400" }}>
