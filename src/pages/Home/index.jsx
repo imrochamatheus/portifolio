@@ -17,6 +17,7 @@ const Home = () => {
       align="center"
     >
       <Nav />
+
       <Stack
         direction={{ base: "column", md: "row" }}
         spacing={5}
@@ -28,10 +29,10 @@ const Home = () => {
             src={profile}
             w={{ base: 250, md: 300 }}
             as={motion.img}
-            initial={{ marginLeft: "-500px" }}
+            initial={{ marginLeft: "-50%" }}
             animate={{ marginLeft: 0 }}
             exit={{ marginLeft: "-500px" }}
-            transition="all .2s"
+            transition="all .1s"
           />
         </StackItem>
 
@@ -56,10 +57,21 @@ const Home = () => {
 
             <StackItem>
               <Heading
-                textShadow="4px 4px #ff0000, -4px -4px #9F7AEA"
+                display="flex"
+                textShadow={{
+                  base: "2px 2px #ff0050, -2px -2px #00f2ea",
+                  md: "6px 6px #ff0050, -6px -6px #00f2ea",
+                }}
                 fontSize={{ base: "3xl", md: "4xl", lg: "6xl" }}
               >
                 Matheus Rocha!
+                <Typewriter
+                  options={{
+                    strings: [""],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
               </Heading>
             </StackItem>
 

@@ -1,17 +1,8 @@
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  Flex,
-  Stack,
-  StackItem,
-  Text,
-} from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Breadcrumb, Flex } from "@chakra-ui/react";
 import { sections } from "./sections";
-import { Icon } from "@chakra-ui/react";
-import { AnimatePresence, motion } from "framer-motion";
-import { linkMotion, iconMotion } from "./animationsConfig";
+import { AnimatePresence } from "framer-motion";
+
+import Item from "./Item";
 
 const Nav = () => {
   return (
@@ -28,34 +19,7 @@ const Nav = () => {
       >
         <Breadcrumb fontWeight="medium" fontSize="sm" spacing={8} separator="">
           {sections.map(({ label, url, icon }, i) => (
-            <BreadcrumbItem
-              key={i}
-              as={motion.div}
-              initial="rest"
-              whileHover="hover"
-              animate="rest"
-              variants={linkMotion}
-            >
-              <BreadcrumbLink
-                as={Link}
-                to={url}
-                _hover={{ color: "purple.400" }}
-              >
-                <Stack align="center" direction={{ base: "column", md: "row" }}>
-                  <StackItem as={motion.div} variants={iconMotion}>
-                    <Icon as={icon} fontSize={24} color="white.500" />
-                  </StackItem>
-                  <StackItem>
-                    <Text
-                      fontFamily={"heading"}
-                      fontSize={{ base: "sm", md: "md" }}
-                    >
-                      {label}{" "}
-                    </Text>
-                  </StackItem>
-                </Stack>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
+            <Item {...{ label, url, icon }} key={i} />
           ))}
         </Breadcrumb>
       </Flex>
