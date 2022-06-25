@@ -17,7 +17,6 @@ const Home = () => {
       align="center"
     >
       <Nav />
-
       <Stack
         direction={{ base: "column", md: "row" }}
         spacing={5}
@@ -60,7 +59,8 @@ const Home = () => {
                 display="flex"
                 textShadow={{
                   base: "2px 2px #ff0050, -2px -2px #00f2ea",
-                  md: "6px 6px #ff0050, -6px -6px #00f2ea",
+                  md: "4px 4px #ff0050, -4px -4px #00f2ea",
+                  lg: "6px 6px #ff0050, -6px -6px #00f2ea",
                 }}
                 fontSize={{ base: "3xl", md: "4xl", lg: "6xl" }}
               >

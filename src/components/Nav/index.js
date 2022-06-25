@@ -10,12 +10,13 @@ const Nav = () => {
       <Flex
         py={4}
         justify="center"
-        position="absolute"
+        position="fixed"
         bottom={0}
         w="100%"
         color="whiteAlpha.700"
         borderTop="1px solid"
         borderColor="whiteAlpha.400"
+        background="black"
       >
         <Breadcrumb fontWeight="medium" fontSize="sm" spacing={8} separator="">
           {sections.map(({ label, url, icon }, i) => (
