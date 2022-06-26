@@ -237,7 +237,7 @@ const About = () => {
         </Link>
       </Box>
 
-      <Stack spacing={4}>
+      <Stack spacing={8}>
         <StackItem>
           <Heading
             fontSize={{ base: "3xl", lg: "4xl" }}
