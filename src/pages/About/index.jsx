@@ -8,25 +8,46 @@ import {
   Divider,
   Icon,
   Box,
+  Link,
+  ScaleFade,
 } from "@chakra-ui/react";
+import { useRef } from "react";
 import Nav from "../../components/Nav";
-import profilePhoto from "../../assets/img/profile.png";
 import rock from "../../assets/img/rock.png";
+import profilePhoto from "../../assets/img/profile.png";
+import questionImg from "../../assets/img/int-icon.png";
+import { container, item } from "./animationConfig";
+
 import { BsChevronDoubleDown } from "react-icons/bs";
-import { motion } from "framer-motion";
 import { SlideFade } from "@chakra-ui/react";
+import { skills } from "./skills";
+import { motion } from "framer-motion";
+// import { Link, animateScroll as scroll } from "react-scroll";
+
+import { useObserver } from "./observers";
 
 const About = () => {
+  const skillsRef = useRef(null);
+  const aboutRef = useRef(null);
+  const hobbiesRef = useRef(null);
+  const presentationRef = useRef(null);
+
+  const { inViewport: presentationViewPort } = useObserver(presentationRef);
+  const { inViewport: aboutViewPort } = useObserver(aboutRef);
+  const { inViewport: hobbiesViewPort } = useObserver(hobbiesRef);
+  const { inViewport: skillsViewPort } = useObserver(skillsRef);
+
   return (
     <Flex
-      minH="100vh"
+      h="100vh"
+      overflow="auto"
       w="100%"
       direction="column"
-      justify="center"
       align="center"
       position="relative"
       gap={5}
-      pb={24}
+      py={24}
+      scrollBehavior="smooth"
     >
       <Stack
         direction={{ base: "column", md: "row" }}
@@ -34,8 +55,13 @@ const About = () => {
         alignItems="center"
         spacing={6}
       >
-        <StackItem as={SlideFade} in={true} offsetX="-50%" transition="all 2s">
-          <Image src={profilePhoto} w={300} />
+        <StackItem
+          as={SlideFade}
+          in={presentationViewPort}
+          offsetX="-50%"
+          transition="all 1s"
+        >
+          <Image src={profilePhoto} w={250} ref={presentationRef} />
         </StackItem>
         <Divider
           orientation="vertical"
@@ -43,7 +69,13 @@ const About = () => {
           h="100px"
           display={{ base: "none", md: "block" }}
         />
-        <StackItem maxW="350px">
+        <StackItem
+          maxW="350px"
+          as={SlideFade}
+          in={presentationViewPort}
+          offsetY="-50%"
+          transition="all 1s"
+        >
           <Text
             textShadow="1.5px 1.5px #ff0050, -1.5px -1.5px #00f2ea"
             mt={{ base: 2, md: -24 }}
@@ -68,20 +100,95 @@ const About = () => {
           borderRadius: "100%",
         }}
       >
-        <Icon as={BsChevronDoubleDown} fontSize={24} my={1} color="#00f2ea" />
+        <Link href="#about">
+          <Icon as={BsChevronDoubleDown} fontSize={24} my={1} color="#00f2ea" />
+        </Link>
       </Box>
       <Stack
+        id="about"
         direction={{ base: "column-reverse", md: "row" }}
         justify="center"
         alignItems="center"
         spacing={6}
       >
-        <StackItem maxW="350px">
-          <Text
-            textShadow="1.5px 1.5px #ff0050, -1.5px -1.5px #00f2ea"
-            mt={{ base: 0, md: 24 }}
-            mb={2}
+        <StackItem
+          maxW="350px"
+          as={ScaleFade}
+          initialScale={0.6}
+          in={aboutViewPort}
+          transition="all 1s"
+        >
+          <Text fontSize={{ base: "xs", md: "sm" }} mb={2}>
+            Sou Técnico em Desenvolvimento de Sistemas pelo Senai-BA e
+            Desenvolvedor Front End pela Kenzie Academy Brasil, onde atualmente
+            presto serviços como monitor de ensino, ou Peer Coach, como somos
+            chamados.
+          </Text>
+          <Text fontSize={{ base: "xs", md: "sm" }}>
+            Atualmente, estudo desenvolvimento web full stack também na Kenzie,
+            e estou sempre em busca de conhecimento extra onde quer que seja.
+            Então já sabe: Aprendeu uma coisa legal? Me ensina também!
+          </Text>
+        </StackItem>
+        <StackItem
+          textAlign="center"
+          as={SlideFade}
+          in={aboutViewPort}
+          offsetX="50%"
+          transition="all 1s"
+        >
+          <Heading
+            fontSize={{ base: "3xl", lg: "4xl" }}
+            textShadow="2px 2px #ff0050, -2px -2px #00f2ea"
           >
+            O que faço?
+          </Heading>
+          <Image src={questionImg} w={300} ref={aboutRef} />
+        </StackItem>
+      </Stack>
+      <Box
+        as={motion.div}
+        whileHover={{ scale: 1.5 }}
+        whileTap={{
+          scale: 0.8,
+          borderRadius: "100%",
+        }}
+      >
+        <Link href="#hobbies">
+          <Icon as={BsChevronDoubleDown} fontSize={24} my={1} color="#00f2ea" />
+        </Link>
+      </Box>
+      <Stack
+        id="hobbies"
+        direction={{ base: "column", md: "row" }}
+        justify="center"
+        alignItems="center"
+        spacing={6}
+      >
+        <StackItem
+          textAlign="center"
+          as={SlideFade}
+          in={hobbiesViewPort}
+          offsetX="-50%"
+          transition="all 1s"
+        >
+          <Heading
+            fontSize={{ base: "3xl", lg: "4xl" }}
+            textShadow="2px 2px #ff0050, -2px -2px #00f2ea"
+            id="hobbies"
+          >
+            Let´s Rock
+          </Heading>
+          <Image src={rock} w={300} ref={hobbiesRef} />
+        </StackItem>
+        <StackItem
+          maxW="350px"
+          as={SlideFade}
+          in={hobbiesViewPort}
+          offsetX="50%"
+          transition="all 1s"
+        >
+          <Text textShadow="1.5px 1.5px #ff0050, -1.5px -1.5px #00f2ea" mb={2}>
             Hobbies
           </Text>
           <Text fontSize={{ base: "xs", md: "sm" }} mb={2}>
@@ -94,21 +201,55 @@ const About = () => {
             Legends, ou, para os mais íntimos, lolzinho.
           </Text>
         </StackItem>
+      </Stack>
+      <Box
+        as={motion.div}
+        whileHover={{ scale: 1.5 }}
+        whileTap={{
+          scale: 0.8,
+          borderRadius: "100%",
+        }}
+      >
+        <Link href="#skills">
+          <Icon as={BsChevronDoubleDown} fontSize={24} my={1} color="#00f2ea" />
+        </Link>
+      </Box>
 
-        <StackItem
-          textAlign="center"
-          as={SlideFade}
-          in={true}
-          offsetX="50%"
-          transition="all 2s"
-        >
+      <Stack spacing={4}>
+        <StackItem>
           <Heading
             fontSize={{ base: "3xl", lg: "4xl" }}
             textShadow="2px 2px #ff0050, -2px -2px #00f2ea"
+            textAlign="center"
           >
-            Let´s Rock
+            Skills
           </Heading>
-          <Image src={rock} w={300} />
+        </StackItem>
+        <StackItem>
+          <Stack
+            id="skills"
+            ref={skillsRef}
+            spacing={{ base: 2, md: 6 }}
+            direction="row"
+            textAlign="center"
+            as={motion.ul}
+            variants={container}
+            initial="hidden"
+            animate={skillsViewPort ? "visible" : ""}
+          >
+            {skills.map(({ label, icon }, i) => (
+              <StackItem key={i} as={motion.li} variants={item}>
+                <Box>
+                  <Icon
+                    as={icon}
+                    fontSize={{ base: 36, md: 28 }}
+                    rounded="full"
+                  />
+                </Box>
+                <Text display={{ base: "none", md: "block" }}>{label}</Text>
+              </StackItem>
+            ))}
+          </Stack>
         </StackItem>
       </Stack>
       <Nav />
