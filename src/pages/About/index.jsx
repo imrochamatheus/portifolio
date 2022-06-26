@@ -10,6 +10,8 @@ import {
   Box,
   Link,
   ScaleFade,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
 import { useMemo, useRef } from "react";
 import Nav from "../../components/Nav";
@@ -18,7 +20,7 @@ import profilePhoto from "../../assets/img/profile.png";
 import questionImg from "../../assets/img/int-icon.png";
 import { container, item } from "./animationConfig";
 
-import { BsChevronDoubleDown } from "react-icons/bs";
+import { BsChevronDoubleDown, BsChevronDoubleUp } from "react-icons/bs";
 import { SlideFade } from "@chakra-ui/react";
 import { skills } from "./skills";
 import { motion } from "framer-motion";
@@ -64,10 +66,12 @@ const About = () => {
       scrollBehavior="smooth"
     >
       <Stack
+        id="top"
         direction={{ base: "column", md: "row" }}
-        justify="center"
+        justify="space-between"
         alignItems="center"
-        spacing={6}
+        w="100%"
+        maxW={{ base: "100%", md: "700px" }}
       >
         <StackItem
           as={SlideFade}
@@ -121,9 +125,10 @@ const About = () => {
       <Stack
         id="about"
         direction={{ base: "column-reverse", md: "row" }}
-        justify="center"
+        justify="space-between"
         alignItems="center"
-        spacing={6}
+        w="100%"
+        maxW={{ base: "100%", md: "700px" }}
       >
         <StackItem
           maxW="350px"
@@ -132,6 +137,9 @@ const About = () => {
           in={aboutViewPort}
           transition="all 1s"
         >
+          <Text textShadow="1.5px 1.5px #ff0050, -1.5px -1.5px #00f2ea" mb={2}>
+            Educação
+          </Text>
           <Text fontSize={{ base: "xs", md: "sm" }} mb={2}>
             Sou Técnico em Desenvolvimento de Sistemas pelo Senai-BA e
             Desenvolvedor Front End pela Kenzie Academy Brasil, onde atualmente
@@ -144,7 +152,9 @@ const About = () => {
             Então já sabe: Aprendeu uma coisa legal? Me ensina também!
           </Text>
         </StackItem>
+
         <StackItem
+          mt={-24}
           textAlign="center"
           as={SlideFade}
           in={aboutViewPort}
@@ -158,14 +168,7 @@ const About = () => {
           >
             O que faço?
           </Heading>
-          <Image
-            src={questionImg}
-            // w={{ base: 250, md: 300 }}
-            w={300}
-            ref={aboutRef}
-            boxShadow="1px 1px 5px #00f2ea"
-            rounded="full"
-          />
+          <Image src={questionImg} w={200} ref={aboutRef} />
         </StackItem>
       </Stack>
       <Box
@@ -183,9 +186,10 @@ const About = () => {
       <Stack
         id="hobbies"
         direction={{ base: "column", md: "row" }}
-        justify="center"
+        justify="space-between"
         alignItems="center"
-        spacing={6}
+        w="100%"
+        maxW={{ base: "100%", md: "700px" }}
       >
         <StackItem
           textAlign="center"
@@ -237,7 +241,14 @@ const About = () => {
         </Link>
       </Box>
 
-      <Stack spacing={8}>
+      <Stack
+        spacing={8}
+        id="skills"
+        justify="space-between"
+        alignItems="center"
+        w="100%"
+        maxW={{ base: "100%", md: "700px" }}
+      >
         <StackItem>
           <Heading
             fontSize={{ base: "3xl", lg: "4xl" }}
@@ -248,30 +259,33 @@ const About = () => {
           </Heading>
         </StackItem>
         <StackItem>
-          <Stack
-            id="skills"
+          <Wrap
             ref={skillsRef}
             spacing={{ base: 2, md: 6 }}
-            direction="row"
-            textAlign="center"
             as={motion.ul}
             variants={container}
             initial="hidden"
             animate={skillsViewPort ? "visible" : ""}
+            w="100%"
+            maxW={{ base: "100%", md: "700px" }}
           >
             {skills.map(({ label, icon }, i) => (
-              <StackItem
+              <WrapItem
                 key={i}
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
                 as={motion.li}
                 variants={item}
+                p={2}
                 whileHover={{
                   color: "#00f2ea",
-                  scale: 1.4,
+                  scale: 1.2,
                   textShadow: "1.5px 1.5px #ff0050, -1.5px -1.5px #00f2ea",
                 }}
                 whileTap={{
                   color: "#00f2ea",
-                  scale: 1.4,
+                  scale: 1.2,
                   textShadow: "1.5px 1.5px #ff0050, -1.5px -1.5px #00f2ea",
                 }}
               >
@@ -282,9 +296,9 @@ const About = () => {
                 />
 
                 <Text display={{ base: "none", md: "block" }}>{label}</Text>
-              </StackItem>
+              </WrapItem>
             ))}
-          </Stack>
+          </Wrap>
         </StackItem>
       </Stack>
       <Box
@@ -301,7 +315,14 @@ const About = () => {
         </Link>
       </Box>
 
-      <Stack maxW={{ base: "300px", md: "650px" }} spacing={12}>
+      <Stack
+        justify="space-between"
+        alignItems="center"
+        w="100%"
+        maxW={{ base: "350", md: "700px" }}
+        id="qualifications"
+        spacing={12}
+      >
         <StackItem>
           <Heading
             fontSize={{ base: "3xl", lg: "4xl" }}
@@ -312,7 +333,7 @@ const About = () => {
           </Heading>
         </StackItem>
         <StackItem>
-          <Carousel autoPlay infiniteLoop={true} id="qualifications">
+          <Carousel autoPlay infiniteLoop={true}>
             {certifications.map((certfImg, i) => (
               <div key={i}>
                 <img src={certfImg} alt="certification" />
@@ -321,6 +342,18 @@ const About = () => {
           </Carousel>
         </StackItem>
       </Stack>
+      <Box
+        as={motion.div}
+        whileHover={{ scale: 1.5 }}
+        whileTap={{
+          scale: 0.8,
+          borderRadius: "100%",
+        }}
+      >
+        <Link href="#top">
+          <Icon as={BsChevronDoubleUp} fontSize={24} my={1} color="#00f2ea" />
+        </Link>
+      </Box>
 
       <Nav />
     </Flex>
