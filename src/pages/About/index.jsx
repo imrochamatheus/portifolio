@@ -11,7 +11,7 @@ import {
   Link,
   ScaleFade,
 } from "@chakra-ui/react";
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import Nav from "../../components/Nav";
 import rock from "../../assets/img/rock.png";
 import profilePhoto from "../../assets/img/profile.png";
@@ -22,6 +22,15 @@ import { BsChevronDoubleDown } from "react-icons/bs";
 import { SlideFade } from "@chakra-ui/react";
 import { skills } from "./skills";
 import { motion } from "framer-motion";
+
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+
+import kenzie from "../../assets/img/certificadoKenzie.jpg";
+import certf_1 from "../../assets/img/certificado_1.png";
+import certf_2 from "../../assets/img/certificado_2.png";
+import certf_3 from "../../assets/img/certificado_3.png";
+
 // import { Link, animateScroll as scroll } from "react-scroll";
 
 import { useObserver } from "./observers";
@@ -32,6 +41,10 @@ const About = () => {
   const hobbiesRef = useRef(null);
   const presentationRef = useRef(null);
 
+  const certifications = useMemo(() => {
+    return [kenzie, certf_1, certf_2, certf_3];
+  }, []);
+
   const { inViewport: presentationViewPort } = useObserver(presentationRef);
   const { inViewport: aboutViewPort } = useObserver(aboutRef);
   const { inViewport: hobbiesViewPort } = useObserver(hobbiesRef);
@@ -40,8 +53,9 @@ const About = () => {
   return (
     <Flex
       h="100vh"
-      overflow="auto"
+      overflowY="auto"
       w="100%"
+      overflowX="hidden"
       direction="column"
       align="center"
       position="relative"
@@ -61,7 +75,7 @@ const About = () => {
           offsetX="-50%"
           transition="all 1s"
         >
-          <Image src={profilePhoto} w={250} ref={presentationRef} />
+          <Image src={profilePhoto} w={300} ref={presentationRef} />
         </StackItem>
         <Divider
           orientation="vertical"
@@ -140,10 +154,18 @@ const About = () => {
           <Heading
             fontSize={{ base: "3xl", lg: "4xl" }}
             textShadow="2px 2px #ff0050, -2px -2px #00f2ea"
+            mb={3}
           >
             O que faço?
           </Heading>
-          <Image src={questionImg} w={300} ref={aboutRef} />
+          <Image
+            src={questionImg}
+            // w={{ base: 250, md: 300 }}
+            w={300}
+            ref={aboutRef}
+            boxShadow="1px 1px 5px #00f2ea"
+            rounded="full"
+          />
         </StackItem>
       </Stack>
       <Box
@@ -238,20 +260,68 @@ const About = () => {
             animate={skillsViewPort ? "visible" : ""}
           >
             {skills.map(({ label, icon }, i) => (
-              <StackItem key={i} as={motion.li} variants={item}>
-                <Box>
-                  <Icon
-                    as={icon}
-                    fontSize={{ base: 36, md: 28 }}
-                    rounded="full"
-                  />
-                </Box>
+              <StackItem
+                key={i}
+                as={motion.li}
+                variants={item}
+                whileHover={{
+                  color: "#00f2ea",
+                  scale: 1.4,
+                  textShadow: "1.5px 1.5px #ff0050, -1.5px -1.5px #00f2ea",
+                }}
+                whileTap={{
+                  color: "#00f2ea",
+                  scale: 1.4,
+                  textShadow: "1.5px 1.5px #ff0050, -1.5px -1.5px #00f2ea",
+                }}
+              >
+                <Icon
+                  as={icon}
+                  fontSize={{ base: 36, md: 28 }}
+                  rounded="full"
+                />
+
                 <Text display={{ base: "none", md: "block" }}>{label}</Text>
               </StackItem>
             ))}
           </Stack>
         </StackItem>
       </Stack>
+      <Box
+        as={motion.div}
+        whileHover={{ scale: 1.5 }}
+        whileTap={{
+          scale: 0.8,
+          borderRadius: "100%",
+        }}
+        mt={6}
+      >
+        <Link href="#qualifications">
+          <Icon as={BsChevronDoubleDown} fontSize={24} my={1} color="#00f2ea" />
+        </Link>
+      </Box>
+
+      <Stack maxW={{ base: "300px", md: "650px" }} spacing={12}>
+        <StackItem>
+          <Heading
+            fontSize={{ base: "3xl", lg: "4xl" }}
+            textShadow="2px 2px #ff0050, -2px -2px #00f2ea"
+            textAlign="center"
+          >
+            Qualificações
+          </Heading>
+        </StackItem>
+        <StackItem>
+          <Carousel autoPlay infiniteLoop={true} id="qualifications">
+            {certifications.map((certfImg, i) => (
+              <div key={i}>
+                <img src={certfImg} alt="certification" />
+              </div>
+            ))}
+          </Carousel>
+        </StackItem>
+      </Stack>
+
       <Nav />
     </Flex>
   );
