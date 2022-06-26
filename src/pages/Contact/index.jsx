@@ -1,5 +1,6 @@
 import { Flex, Heading } from "@chakra-ui/react";
 import Nav from "../../components/Nav";
+import Card from "../../components/ProjectCard";
 
 const Contact = () => {
   return (
@@ -11,6 +12,7 @@ const Contact = () => {
       align="center"
     >
       <Nav />
+      <Card />
       <Heading>Contact</Heading>
     </Flex>
   );

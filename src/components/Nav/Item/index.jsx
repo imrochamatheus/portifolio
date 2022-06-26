@@ -55,7 +55,7 @@ const Item = ({ label, url, icon }) => {
             <Icon as={icon} fontSize={24} color="white.500" rounded="full" />
           </StackItem>
           <StackItem>
-            <Text fontFamily={"heading"} fontSize={{ base: "sm", md: "md" }}>
+            <Text fontFamily={"heading"} fontSize={{ base: "sm" }}>
               {label}{" "}
             </Text>
           </StackItem>

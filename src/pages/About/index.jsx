@@ -32,8 +32,7 @@ import kenzie from "../../assets/img/certificadoKenzie.jpg";
 import certf_1 from "../../assets/img/certificado_1.png";
 import certf_2 from "../../assets/img/certificado_2.png";
 import certf_3 from "../../assets/img/certificado_3.png";
-
-// import { Link, animateScroll as scroll } from "react-scroll";
+import certf_4 from "../../assets/img/certificado_4.png";
 
 import { useObserver } from "./observers";
 
@@ -44,7 +43,7 @@ const About = () => {
   const presentationRef = useRef(null);
 
   const certifications = useMemo(() => {
-    return [kenzie, certf_1, certf_2, certf_3];
+    return [kenzie, certf_1, certf_2, certf_3, certf_4];
   }, []);
 
   const { inViewport: presentationViewPort } = useObserver(presentationRef);
@@ -319,7 +318,7 @@ const About = () => {
         justify="space-between"
         alignItems="center"
         w="100%"
-        maxW={{ base: "350", md: "700px" }}
+        maxW={{ base: "350px", md: "700px" }}
         id="qualifications"
         spacing={12}
       >
@@ -332,7 +331,7 @@ const About = () => {
             Qualificações
           </Heading>
         </StackItem>
-        <StackItem>
+        <StackItem maxW={{ base: "350px", md: "700px" }}>
           <Carousel autoPlay infiniteLoop={true}>
             {certifications.map((certfImg, i) => (
               <div key={i}>
