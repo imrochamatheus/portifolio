@@ -16,7 +16,6 @@ const Home = () => {
       align="center"
     >
       <Nav />
-
       <Stack
         direction={{ base: "column", md: "row" }}
         spacing={5}
