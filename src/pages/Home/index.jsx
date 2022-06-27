@@ -1,5 +1,16 @@
-import { Flex, Heading, SlideFade, Stack, StackItem } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Icon,
+  SlideFade,
+  Stack,
+  StackItem,
+} from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
+import { BsGithub } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 import Nav from "../../components/Nav";
 import Typewriter from "typewriter-effect";
@@ -7,6 +18,9 @@ import Typewriter from "typewriter-effect";
 import profile from "../../assets/img/home-animation.gif";
 
 const Home = () => {
+  const linkedin = "https://www.linkedin.com/in/matheus-rocha-in/";
+  const github = "https://github.com/imrochamatheus";
+
   return (
     <Flex
       minH="100vh"
@@ -89,6 +103,54 @@ const Home = () => {
                   }}
                 />
               </Heading>
+            </StackItem>
+            <StackItem pt={2}>
+              <Flex gap={4}>
+                <Box
+                  as={motion.div}
+                  onClick={() => window.open(github, "_blank")}
+                  cursor="pointer"
+                  whileHover={{
+                    scale: 1.5,
+                    rotate: 360,
+                    color: "#00f2ea",
+                  }}
+                  whileTap={{
+                    scale: 1.5,
+                    rotate: 360,
+                    color: "#00f2ea",
+                  }}
+                >
+                  <Icon
+                    as={BsGithub}
+                    fontSize={24}
+                    color="white.500"
+                    rounded="full"
+                  />
+                </Box>
+                <Box
+                  as={motion.div}
+                  onClick={() => window.open(linkedin, "_blank")}
+                  cursor="pointer"
+                  whileHover={{
+                    scale: 1.5,
+                    rotate: 360,
+                    color: "#00f2ea",
+                  }}
+                  whileTap={{
+                    scale: 1.5,
+                    rotate: 360,
+                    color: "#00f2ea",
+                  }}
+                >
+                  <Icon
+                    as={BsLinkedin}
+                    fontSize={24}
+                    color="white.500"
+                    rounded="full"
+                  />
+                </Box>
+              </Flex>
             </StackItem>
           </Stack>
         </StackItem>
