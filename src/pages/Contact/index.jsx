@@ -1,19 +1,23 @@
-import { Flex, Heading } from "@chakra-ui/react";
-import Nav from "../../components/Nav";
-import Card from "../../components/ProjectCard";
+import { Box, Flex } from "@chakra-ui/react";
+
+import IconsLine from "../../components/IconsLine";
 
 const Contact = () => {
   return (
     <Flex
-      minH="100vh"
+      h="100vh"
       w="100%"
+      position="relative"
+      overflow="hidden"
       direction="column"
-      justify="center"
-      align="center"
     >
-      <Nav />
-      <Card />
-      <Heading>Contact</Heading>
+      <Box position="relative" top="-50%">
+        {Array(20)
+          .fill(<IconsLine />)
+          .map((item, i) => (
+            <Box key={i}>{item}</Box>
+          ))}
+      </Box>
     </Flex>
   );
 };

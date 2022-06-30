@@ -14,10 +14,10 @@ import {
   WrapItem,
 } from "@chakra-ui/react";
 import { useMemo, useRef } from "react";
-import Nav from "../../components/Nav";
 import rock from "../../assets/img/rock.png";
 import profilePhoto from "../../assets/img/profile.png";
 import questionImg from "../../assets/img/int-icon.png";
+import { Slide } from "@chakra-ui/react";
 import { container, item } from "./animationConfig";
 
 import { BsChevronDoubleDown, BsChevronDoubleUp } from "react-icons/bs";
@@ -353,8 +353,6 @@ const About = () => {
           <Icon as={BsChevronDoubleUp} fontSize={24} my={1} color="#00f2ea" />
         </Link>
       </Box>
-
-      <Nav />
     </Flex>
   );
 };

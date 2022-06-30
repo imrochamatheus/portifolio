@@ -11,8 +11,7 @@ import { Image } from "@chakra-ui/react";
 import { BsGithub } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { motion } from "framer-motion";
-
-import Nav from "../../components/Nav";
+import moon from "../../assets/img/moon.png";
 import Typewriter from "typewriter-effect";
 
 import profile from "../../assets/img/home-animation.gif";
@@ -29,7 +28,6 @@ const Home = () => {
       justify="center"
       align="center"
     >
-      <Nav />
       <Stack
         direction={{ base: "column", md: "row" }}
         spacing={5}

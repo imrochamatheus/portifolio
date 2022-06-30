@@ -8,8 +8,11 @@ import {
   Text,
   Image,
   useColorModeValue,
+  SlideFade,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useObserver } from "../../pages/About/observers";
 
 const ProjectCard = ({
   link,
@@ -21,8 +24,19 @@ const ProjectCard = ({
   img,
   i,
 }) => {
+  const cardRef = useRef(null);
+
+  const { inViewport: cardViewport } = useObserver(cardRef);
+
   return (
-    <Center py={6}>
+    <Center
+      py={6}
+      as={SlideFade}
+      ref={cardRef}
+      {...(i % 2 ? { offsetX: "-50%" } : { offsetX: "50%" })}
+      in={cardViewport}
+      transition={`all 2s`}
+    >
       <Stack
         borderRadius="lg"
         w={{ sm: "350px", md: "640px" }}
@@ -67,7 +81,7 @@ const ProjectCard = ({
                   py={1}
                   bg="transparent"
                   color="rgb(196, 196, 196)"
-                  textShadow="1.5px 1.5px #ff0050, -1.5px -1.5px #00f2ea"
+                  textShadow="0.5px 0.5px #ff0050, -0.5px -0.5px #00f2ea"
                   fontWeight={"400"}
                   as={motion.div}
                   whileHover={{

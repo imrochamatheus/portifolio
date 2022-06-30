@@ -1,5 +1,4 @@
 import { Flex, Box } from "@chakra-ui/react";
-import Nav from "../../components/Nav";
 import ProjectCard from "../../components/ProjectCard";
 
 import { BsChevronDoubleUp } from "react-icons/bs";
@@ -54,7 +53,6 @@ const Projects = () => {
           <Icon as={BsChevronDoubleUp} fontSize={24} my={1} color="#00f2ea" />
         </Link>
       </Box>
-      <Nav />
     </Flex>
   );
 };
