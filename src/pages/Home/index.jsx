@@ -15,6 +15,7 @@ import moon from "../../assets/img/moon.png";
 import Typewriter from "typewriter-effect";
 
 import profile from "../../assets/img/home-animation.gif";
+import Contact from "../Contact";
 
 const Home = () => {
   const linkedin = "https://www.linkedin.com/in/matheus-rocha-in/";
@@ -34,6 +35,7 @@ const Home = () => {
         display="flex"
         align="center"
       >
+        <Contact />
         <StackItem as={SlideFade} in={true} offsetX="-50%" transition="all 1s">
           <Image src={profile} w={{ base: 250, md: 300 }} />
         </StackItem>

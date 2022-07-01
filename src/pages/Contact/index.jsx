@@ -7,15 +7,17 @@ const Contact = () => {
     <Flex
       h="100vh"
       w="100%"
-      position="relative"
+      position="fixed"
       overflow="hidden"
       direction="column"
+      alignItems="center"
+      left="0"
     >
       <Box position="relative" top="-50%">
         {Array(20)
           .fill(<IconsLine />)
           .map((item, i) => (
-            <Box key={i}>{item}</Box>
+            <Flex key={i}>{item}</Flex>
           ))}
       </Box>
     </Flex>

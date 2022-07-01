@@ -20,6 +20,7 @@ import { FaCss3Alt } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
 import { FaJava } from "react-icons/fa";
 import { FaLaravel } from "react-icons/fa";
+// import { keyframes } from "@chakra-ui/react";
 import AnimatedIcon from "../../components/AnimatedIcon";
 
 const IconsLine = () => {
@@ -45,7 +46,56 @@ const IconsLine = () => {
     FaReact,
     FaJava,
     FaLaravel,
+    FaGithub,
+    FaBatteryFull,
+    FaFacebookMessenger,
+    FaGitlab,
+    FaPhp,
+    FaHtml5,
+    FaAws,
+    FaBootstrap,
+    FaLinkedinIn,
+    FaWordpress,
+    FaVuejs,
+    FaNodeJs,
+    FaJs,
+    FaSass,
+    FaPython,
+    FaStackOverflow,
+    FaUbuntu,
+    FaCss3Alt,
+    FaReact,
+    FaJava,
+    FaLaravel,
+    FaGithub,
+    FaBatteryFull,
+    FaFacebookMessenger,
+    FaGitlab,
+    FaPhp,
+    FaHtml5,
+    FaAws,
+    FaBootstrap,
+    FaLinkedinIn,
+    FaWordpress,
+    FaVuejs,
+    FaNodeJs,
+    FaJs,
+    FaSass,
+    FaPython,
+    FaStackOverflow,
+    FaUbuntu,
+    FaCss3Alt,
+    FaReact,
+    FaJava,
+    FaLaravel,
   ];
+
+  //   const spin = keyframes`
+  //   from { transform: rotate(0deg); }
+  //   to { transform: rotate(360deg); }
+  // `;
+
+  //   const animation = `${spin} infinite 20s linear`;
 
   return (
     <Flex
@@ -53,9 +103,16 @@ const IconsLine = () => {
       position="relative"
       fontSize={"6xl"}
       transform="rotate(-30deg)"
+      ml={-10}
+      // animation={animation}
     >
       {icons.map((icon, i) => (
-        <AnimatedIcon reactIcon={icon} key={i} />
+        <Flex>
+          <AnimatedIcon
+            reactIcon={icons[Math.floor(Math.random() * 20)]}
+            key={i}
+          />
+        </Flex>
       ))}
     </Flex>
   );
