@@ -1,26 +1,11 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  Icon,
-  SlideFade,
-  Stack,
-  StackItem,
-} from "@chakra-ui/react";
+import { Flex, Heading, SlideFade, Stack, StackItem } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
-import { BsGithub } from "react-icons/bs";
-import { BsLinkedin } from "react-icons/bs";
-import { motion } from "framer-motion";
-import moon from "../../assets/img/moon.png";
 import Typewriter from "typewriter-effect";
 
-import profile from "../../assets/img/home-animation.gif";
-import Contact from "../Contact";
+import profile from "../../assets/img/home-animation-removed.gif";
+import IconsBackground from "../../components/IconsBackground";
 
 const Home = () => {
-  const linkedin = "https://www.linkedin.com/in/matheus-rocha-in/";
-  const github = "https://github.com/imrochamatheus";
-
   return (
     <Flex
       minH="100vh"
@@ -28,6 +13,7 @@ const Home = () => {
       direction="column"
       justify="center"
       align="center"
+      position="relative"
     >
       <Stack
         direction={{ base: "column", md: "row" }}
@@ -35,7 +21,7 @@ const Home = () => {
         display="flex"
         align="center"
       >
-        <Contact />
+        <IconsBackground />
         <StackItem as={SlideFade} in={true} offsetX="-50%" transition="all 1s">
           <Image src={profile} w={{ base: 250, md: 300 }} />
         </StackItem>
@@ -44,6 +30,8 @@ const Home = () => {
           <Stack spacing={1}>
             <StackItem display="flex" alignItems="flex-end">
               <Heading
+                position="relative"
+                zIndex="999"
                 fontSize={{ base: "xl", md: "5xl" }}
                 fontWeight={300}
                 mb={{ md: -1, lg: -2 }}
@@ -54,6 +42,8 @@ const Home = () => {
                 fontSize={{ base: "md", md: "xl" }}
                 fontWeight={300}
                 variant="span"
+                position="relative"
+                zIndex="999"
               >
                 eu sou o
               </Heading>
@@ -61,6 +51,8 @@ const Home = () => {
 
             <StackItem>
               <Heading
+                position="relative"
+                zIndex="999"
                 display="flex"
                 textShadow={{
                   base: "2px 2px #ff0050, -2px -2px #00f2ea",
@@ -82,6 +74,8 @@ const Home = () => {
 
             <StackItem>
               <Heading
+                position="relative"
+                zIndex="999"
                 fontSize={{ base: "md", md: "3xl" }}
                 fontWeight={300}
                 color="whiteAlpha.600"
@@ -91,7 +85,12 @@ const Home = () => {
             </StackItem>
 
             <StackItem>
-              <Heading fontSize={{ base: "sm", md: "xl" }} fontWeight={300}>
+              <Heading
+                fontSize={{ base: "sm", md: "xl" }}
+                fontWeight={300}
+                position="relative"
+                zIndex="999"
+              >
                 <Typewriter
                   options={{
                     strings: [
@@ -103,54 +102,6 @@ const Home = () => {
                   }}
                 />
               </Heading>
-            </StackItem>
-            <StackItem pt={2}>
-              <Flex gap={4}>
-                <Box
-                  as={motion.div}
-                  onClick={() => window.open(github, "_blank")}
-                  cursor="pointer"
-                  whileHover={{
-                    scale: 1.5,
-                    rotate: 360,
-                    color: "#00f2ea",
-                  }}
-                  whileTap={{
-                    scale: 1.5,
-                    rotate: 360,
-                    color: "#00f2ea",
-                  }}
-                >
-                  <Icon
-                    as={BsGithub}
-                    fontSize={24}
-                    color="white.500"
-                    rounded="full"
-                  />
-                </Box>
-                <Box
-                  as={motion.div}
-                  onClick={() => window.open(linkedin, "_blank")}
-                  cursor="pointer"
-                  whileHover={{
-                    scale: 1.5,
-                    rotate: 360,
-                    color: "#00f2ea",
-                  }}
-                  whileTap={{
-                    scale: 1.5,
-                    rotate: 360,
-                    color: "#00f2ea",
-                  }}
-                >
-                  <Icon
-                    as={BsLinkedin}
-                    fontSize={24}
-                    color="white.500"
-                    rounded="full"
-                  />
-                </Box>
-              </Flex>
             </StackItem>
           </Stack>
         </StackItem>

@@ -9,9 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-
 import { linkMotion, iconMotion } from "../animationsConfig";
-
 import { useLocation } from "react-router-dom";
 
 const Item = ({ label, url, icon }) => {
@@ -41,7 +39,7 @@ const Item = ({ label, url, icon }) => {
         to={url}
         ref={navLink}
         rounded="md"
-        _hover={{ color: "#00f2ea", boxShadow: "1px 1px 30px #00f2ea" }}
+        _hover={{ color: "#00f2ea" }}
         style={{
           ...(isActive ? { color: "#00f2ea" } : ""),
         }}

@@ -9,9 +9,9 @@ const AnimatedIcon = ({ reactIcon }) => {
         transition="1s"
         p="0 5px"
         _hover={{
-          color: "#0f0",
+          color: "#00f2ea",
           transition: "0s",
-          filter: "drop-shadow(-3px -3px 2px rgba(255, 255, 255, 0.3))",
+          filter: "drop-shadow(-3px -3px 15px #00f2ea)",
         }}
       />
     </Box>
@@ -19,3 +19,5 @@ const AnimatedIcon = ({ reactIcon }) => {
 };
 
 export default AnimatedIcon;
+
+// #00f2ea
