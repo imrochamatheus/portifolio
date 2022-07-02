@@ -134,9 +134,6 @@ const ProjectCard = ({
               _hover={{
                 transform: "scale(1)",
               }}
-              _focus={{
-                bg: "gray.200",
-              }}
               boxShadow={
                 "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
               }
