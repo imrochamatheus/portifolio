@@ -5,6 +5,7 @@ import { BsChevronDoubleUp } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { Link } from "@chakra-ui/react";
 import { Icon } from "@chakra-ui/react";
+import stars from "../../assets/img/stars.gif";
 
 import { projects } from "./projects";
 
@@ -22,8 +23,13 @@ const Projects = () => {
       pt={8}
       pb={24}
       scrollBehavior="smooth"
+      style={{
+        backgroundImage: `url(${stars})`,
+        backgroundSize: "cover",
+      }}
     >
       <Box
+        position="relative"
         id="top"
         direction={{ base: "column", md: "row" }}
         px={6}
@@ -31,6 +37,8 @@ const Projects = () => {
         alignItems="center"
         w="100%"
         maxW={{ base: "100%", md: "700px" }}
+        initial="hidden"
+        animate="visible"
       >
         {projects.map(
           ({ link, title, description, tags, demo, code, img }, i) => (
@@ -42,6 +50,7 @@ const Projects = () => {
         )}
       </Box>
       <Box
+        position="relative"
         as={motion.div}
         whileHover={{ scale: 1.5 }}
         whileTap={{

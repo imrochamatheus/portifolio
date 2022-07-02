@@ -8,6 +8,8 @@ import {
   Text,
   Image,
   useColorModeValue,
+  Box,
+  StackItem,
   SlideFade,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
@@ -40,30 +42,40 @@ const ProjectCard = ({
       <Stack
         borderRadius="lg"
         w={{ sm: "350px", md: "640px" }}
-        direction={{ base: "column", md: i % 2 ? "row" : "row-reverse" }}
-        bg={useColorModeValue("black", "gray.900")}
+        direction="column"
+        bg={useColorModeValue("transparent", "gray.900")}
         boxShadow={"2xl"}
-        padding={4}
+        padding={1}
+        spacing={3}
+        justify="center"
+        textAlign="center"
       >
-        <Flex flex={1} bg="blue.200">
-          {link ? (
-            <iframe src={link} width="100%" height="100%" title={title} />
-          ) : (
-            <Image src={img} alt={title} width="100%" height="100%" />
-          )}
-        </Flex>
+        <StackItem>
+          <Heading fontSize={"2xl"} fontFamily={"body"}>
+            {title}
+          </Heading>
+        </StackItem>
+        <StackItem>
+          <Flex flex={1} bg="blue.200">
+            {link ? (
+              <Box
+                as={"iframe"}
+                src={link}
+                width="100%"
+                h={{ base: "200px", md: "300px" }}
+                title={title}
+              />
+            ) : (
+              <Image src={img} alt={title} width="100%" height="100%" />
+            )}
+          </Flex>
+        </StackItem>
         <Stack
           flex={1}
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
-          p={1}
-          pt={2}
         >
-          <Heading fontSize={"2xl"} fontFamily={"body"}>
-            {title}
-          </Heading>
-
           <Text
             textAlign={"center"}
             color={useColorModeValue("rgb(196, 196, 196)", "gray.400")}
@@ -101,7 +113,7 @@ const ProjectCard = ({
             mt={"2rem"}
             direction={"row"}
             padding={2}
-            justifyContent={"space-between"}
+            justifyContent={"center"}
             alignItems={"center"}
           >
             <Button
@@ -111,6 +123,7 @@ const ProjectCard = ({
               height="30px"
               fontSize={"sm"}
               rounded={"full"}
+              maxW="100px"
               variant="outline"
               bg={"transparent"}
               borderColor="#00f2ea"
@@ -132,6 +145,7 @@ const ProjectCard = ({
               flex={1}
               height="30px"
               fontSize={"sm"}
+              maxW="100px"
               color={"white"}
               rounded={"full"}
               variant="outline"

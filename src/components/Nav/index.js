@@ -18,7 +18,12 @@ const Nav = () => {
         borderColor="whiteAlpha.400"
         background="black"
       >
-        <Breadcrumb fontWeight="medium" fontSize="sm" spacing={8} separator="">
+        <Breadcrumb
+          fontWeight="medium"
+          fontSize="sm"
+          spacing={{ base: 4, md: 8 }}
+          separator=""
+        >
           {sections.map(({ label, url, icon }, i) => (
             <Item {...{ label, url, icon }} key={i} />
           ))}

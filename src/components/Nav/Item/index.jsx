@@ -31,7 +31,7 @@ const Item = ({ label, url, icon }) => {
       initial="rest"
       whileHover="hover"
       animate="rest"
-      mx={6}
+      mx={{ base: 3, md: 6 }}
       variants={linkMotion}
     >
       <BreadcrumbLink

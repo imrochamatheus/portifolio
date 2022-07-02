@@ -17,8 +17,9 @@ import { useMemo, useRef } from "react";
 import rock from "../../assets/img/rock.png";
 import profilePhoto from "../../assets/img/profile.png";
 import questionImg from "../../assets/img/int-icon.png";
-import { Slide } from "@chakra-ui/react";
+
 import { container, item } from "./animationConfig";
+import stars from "../../assets/img/stars.gif";
 
 import { BsChevronDoubleDown, BsChevronDoubleUp } from "react-icons/bs";
 import { SlideFade } from "@chakra-ui/react";
@@ -63,6 +64,10 @@ const About = () => {
       gap={5}
       py={24}
       scrollBehavior="smooth"
+      style={{
+        backgroundImage: `url(${stars})`,
+        backgroundSize: "cover",
+      }}
     >
       <Stack
         id="top"

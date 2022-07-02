@@ -18,12 +18,38 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
+import { useRef } from "react";
 import { BsGithub, BsLinkedin, BsPerson } from "react-icons/bs";
 import { MdEmail, MdOutlineEmail } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
+import stars from "../../assets/img/stars.gif";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
   const { hasCopied, onCopy } = useClipboard("im.rochamatheus@gmail.com");
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        form.current,
+        process.env.REACT_APP_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          alert("Mensagem enviada");
+        },
+        (error) => {
+          alert(error.message);
+        }
+      );
+
+    e.target.reset();
+  };
 
   return (
     <Flex
@@ -32,6 +58,10 @@ export default function Contact() {
       justify="center"
       id="contact"
       pb={{ base: 24, md: 0 }}
+      style={{
+        backgroundImage: `url(${stars})`,
+        backgroundSize: "cover",
+      }}
     >
       <Box
         borderRadius="lg"
@@ -39,14 +69,14 @@ export default function Contact() {
         p={{ base: 5, lg: 16 }}
       >
         <Box>
-          <VStack spacing={{ base: 4, md: 8, lg: 20 }}>
+          <VStack spacing={{ base: 4, md: 8, lg: 10 }}>
             <Heading
               fontSize={{
                 base: "4xl",
-                md: "5xl",
+                md: "3xl",
               }}
             >
-              Fale comigo!
+              Deixe sua mensagem!
             </Heading>
 
             <Stack
@@ -72,6 +102,7 @@ export default function Contact() {
                     icon={<MdEmail />}
                     _hover={{
                       color: "#00f2ea",
+                      transform: "scale(1.2)",
                     }}
                     onClick={onCopy}
                     isRound
@@ -89,6 +120,7 @@ export default function Contact() {
                       icon={<BsGithub />}
                       _hover={{
                         color: "#00f2ea",
+                        transform: "scale(1.2)",
                       }}
                       isRound
                       onClick={() =>
@@ -111,6 +143,7 @@ export default function Contact() {
                       icon={<IoLogoWhatsapp size="28px" />}
                       _hover={{
                         color: "#00f2ea",
+                        transform: "scale(1.2)",
                       }}
                       isRound
                       onClick={() =>
@@ -132,6 +165,7 @@ export default function Contact() {
                       icon={<BsLinkedin size="28px" />}
                       _hover={{
                         color: "#00f2ea",
+                        transform: "scale(1.2)",
                       }}
                       isRound
                       onClick={() =>
@@ -152,65 +186,68 @@ export default function Contact() {
                 color={useColorModeValue("gray.700", "whiteAlpha.900")}
                 shadow="base"
               >
-                <VStack spacing={5}>
-                  <FormControl isRequired>
-                    <FormLabel>Name</FormLabel>
+                <form onSubmit={sendEmail} ref={form}>
+                  <VStack spacing={5}>
+                    <FormControl isRequired>
+                      <FormLabel>Name</FormLabel>
 
-                    <InputGroup>
-                      <InputLeftElement children={<BsPerson />} />
-                      <Input
-                        type="text"
-                        name="name"
-                        placeholder="Seu nome"
+                      <InputGroup>
+                        <InputLeftElement children={<BsPerson />} />
+                        <Input
+                          type="text"
+                          name="name"
+                          placeholder="Seu nome"
+                          _focus={{
+                            borderColor: "white",
+                          }}
+                        />
+                      </InputGroup>
+                    </FormControl>
+
+                    <FormControl isRequired>
+                      <FormLabel>Email</FormLabel>
+
+                      <InputGroup>
+                        <InputLeftElement children={<MdOutlineEmail />} />
+                        <Input
+                          type="email"
+                          name="email"
+                          placeholder="Seu Email"
+                          _focus={{
+                            borderColor: "white",
+                          }}
+                        />
+                      </InputGroup>
+                    </FormControl>
+
+                    <FormControl isRequired>
+                      <FormLabel>Message</FormLabel>
+
+                      <Textarea
+                        name="message"
+                        placeholder="Mensagem..."
+                        rows={6}
+                        resize="none"
                         _focus={{
                           borderColor: "white",
                         }}
                       />
-                    </InputGroup>
-                  </FormControl>
+                    </FormControl>
 
-                  <FormControl isRequired>
-                    <FormLabel>Email</FormLabel>
-
-                    <InputGroup>
-                      <InputLeftElement children={<MdOutlineEmail />} />
-                      <Input
-                        type="email"
-                        name="email"
-                        placeholder="Seu Email"
-                        _focus={{
-                          borderColor: "white",
-                        }}
-                      />
-                    </InputGroup>
-                  </FormControl>
-
-                  <FormControl isRequired>
-                    <FormLabel>Message</FormLabel>
-
-                    <Textarea
-                      name="message"
-                      placeholder="Mensagem..."
-                      rows={6}
-                      resize="none"
-                      _focus={{
-                        borderColor: "white",
+                    <Button
+                      type="submit"
+                      colorScheme="blue"
+                      bg="blue.400"
+                      color="white"
+                      _hover={{
+                        bg: "blue.500",
                       }}
-                    />
-                  </FormControl>
-
-                  <Button
-                    colorScheme="blue"
-                    bg="blue.400"
-                    color="white"
-                    _hover={{
-                      bg: "blue.500",
-                    }}
-                    isFullWidth
-                  >
-                    Enviar
-                  </Button>
-                </VStack>
+                      isFullWidth
+                    >
+                      Enviar
+                    </Button>
+                  </VStack>
+                </form>
               </Box>
             </Stack>
           </VStack>
