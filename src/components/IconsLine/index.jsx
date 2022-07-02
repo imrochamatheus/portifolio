@@ -46,47 +46,6 @@ const IconsLine = () => {
     FaJava,
     FaLaravel,
     FaGithub,
-    FaBatteryFull,
-    FaFacebookMessenger,
-    FaGitlab,
-    FaPhp,
-    FaHtml5,
-    FaAws,
-    FaBootstrap,
-    FaLinkedinIn,
-    FaWordpress,
-    FaVuejs,
-    FaNodeJs,
-    FaJs,
-    FaSass,
-    FaPython,
-    FaStackOverflow,
-    FaUbuntu,
-    FaCss3Alt,
-    FaReact,
-    FaJava,
-    FaLaravel,
-    FaGithub,
-    FaBatteryFull,
-    FaFacebookMessenger,
-    FaGitlab,
-    FaPhp,
-    FaHtml5,
-    FaAws,
-    FaBootstrap,
-    FaLinkedinIn,
-    FaWordpress,
-    FaVuejs,
-    FaNodeJs,
-    FaJs,
-    FaSass,
-    FaPython,
-    FaStackOverflow,
-    FaUbuntu,
-    FaCss3Alt,
-    FaReact,
-    FaJava,
-    FaLaravel,
   ];
 
   return (
@@ -99,9 +58,10 @@ const IconsLine = () => {
       overflow="hidden"
     >
       <Flex>
-        {icons.map((_, i) => (
+        {icons.map((icon, i) => (
           <AnimatedIcon
-            reactIcon={icons[Math.floor(Math.random() * 20)]}
+            // reactIcon={icons[Math.floor(Math.random() * 20)]}
+            reactIcon={icon}
             key={i}
           />
         ))}

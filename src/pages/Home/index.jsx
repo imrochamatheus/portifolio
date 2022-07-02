@@ -1,13 +1,6 @@
-import {
-  Flex,
-  Heading,
-  SlideFade,
-  Stack,
-  StackItem,
-  Box,
-  Slide,
-} from "@chakra-ui/react";
+import { Flex, Heading, SlideFade, Stack, StackItem } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
+import { motion, AnimatePresence } from "framer-motion";
 import Typewriter from "typewriter-effect";
 
 import profile from "../../assets/img/home-animation-removed.gif";
@@ -15,7 +8,7 @@ import IconsBackground from "../../components/IconsBackground";
 
 const Home = () => {
   return (
-    <Box as={Slide} in={true} direction="left">
+    <AnimatePresence>
       <Flex
         minH="100vh"
         w="100%"
@@ -23,6 +16,10 @@ const Home = () => {
         justify="center"
         align="center"
         position="relative"
+        as={motion.div}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
       >
         <Stack
           direction={{ base: "column", md: "row" }}
@@ -121,7 +118,7 @@ const Home = () => {
           </StackItem>
         </Stack>
       </Flex>
-    </Box>
+    </AnimatePresence>
   );
 };
 

@@ -15,11 +15,9 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-in-viewport": "^1.0.0-alpha.28",
-    "react-lottie": "^1.2.3",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "react-scroll": "^1.8.7",
     "typewriter-effect": "^2.18.2",
     "web-vitals": "^2.1.0"
   },
@@ -47,7 +45,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "tsparticles": "^2.1.0"
-  }
+  "devDependencies": {}
 }

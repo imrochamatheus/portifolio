@@ -3427,14 +3427,6 @@ babel-preset-react-app@^10.0.1:
     babel-plugin-macros "^3.1.0"
     babel-plugin-transform-react-remove-prop-types "^0.4.24"
 
-babel-runtime@^6.26.0:
-  version "6.26.0"
-  resolved "https://registry.npmjs.org/babel-runtime/-/babel-runtime-6.26.0.tgz"
-  integrity sha512-ITKNuq2wKlW1fJg9sSW52eepoYgZBggvOAHC0u/CYu/qxQ9EVzThCgR69BnSXLHjy2f7SY5zaQ4yt7H9ZVxY2g==
-  dependencies:
-    core-js "^2.4.0"
-    regenerator-runtime "^0.11.0"
-
 balanced-match@^1.0.0:
   version "1.0.2"
   resolved "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"
@@ -3897,11 +3889,6 @@ core-js-pure@^3.20.2, core-js-pure@^3.8.1:
   version "3.23.2"
   resolved "https://registry.npmjs.org/core-js-pure/-/core-js-pure-3.23.2.tgz"
   integrity sha512-t6u7H4Ff/yZNk+zqTr74UjCcZ3k8ApBryeLLV4rYQd9aF3gqmjjGjjR44ENfeBMH8VVvSynIjAJ0mUuFhzQtrA==
-
-core-js@^2.4.0:
-  version "2.6.12"
-  resolved "https://registry.npmjs.org/core-js/-/core-js-2.6.12.tgz"
-  integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
 
 core-js@^3.19.2:
   version "3.23.2"
@@ -6688,11 +6675,6 @@ lodash.sortby@^4.7.0:
   resolved "https://registry.npmjs.org/lodash.sortby/-/lodash.sortby-4.7.0.tgz"
   integrity sha512-HDWXG8isMntAyRF5vZ7xKuEvOhT4AhlRt/3czTSjvGUxjYCBVRQY48ViDHyfYz9VIoBkW4TMGQNapx+l3RUwdA==
 
-lodash.throttle@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz"
-  integrity sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==
-
 lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz"
@@ -6709,11 +6691,6 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
-
-lottie-web@^5.1.3:
-  version "5.9.4"
-  resolved "https://registry.npmjs.org/lottie-web/-/lottie-web-5.9.4.tgz"
-  integrity sha512-bSs1ZTPifnBVejO1MnQHdfrKfcn02YTCmgOh2wcAEICqRA0V7GzDh8FnwXY6+EzT+i8XOunaIloo/5xC5YNbsA==
 
 lower-case@^2.0.2:
   version "2.0.2"
@@ -7932,7 +7909,7 @@ prompts@^2.0.1, prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
+prop-types@^15.5.8, prop-types@^15.6.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -8123,14 +8100,6 @@ react-is@^18.0.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
-react-lottie@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.npmjs.org/react-lottie/-/react-lottie-1.2.3.tgz"
-  integrity sha512-qLCERxUr8M+4mm1LU0Ruxw5Y5Fn/OmYkGfnA+JDM/dZb3oKwVAJCjwnjkj9TMHtzR2U6sMEUD3ZZ1RaHagM7kA==
-  dependencies:
-    babel-runtime "^6.26.0"
-    lottie-web "^5.1.3"
-
 react-refresh@^0.11.0:
   version "0.11.0"
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.11.0.tgz"
@@ -8234,14 +8203,6 @@ react-scripts@5.0.1:
   optionalDependencies:
     fsevents "^2.3.2"
 
-react-scroll@^1.8.7:
-  version "1.8.7"
-  resolved "https://registry.npmjs.org/react-scroll/-/react-scroll-1.8.7.tgz"
-  integrity sha512-fBOIwweAlhicx8RqP9tQXn/Uhd+DTtVRjw+0VBsIn1Z+MjRYLhTZ0tMoTAU1vOD3dce8mI6copexI4yWII+Luw==
-  dependencies:
-    lodash.throttle "^4.1.1"
-    prop-types "^15.7.2"
-
 react-style-singleton@^2.2.1:
   version "2.2.1"
   resolved "https://registry.npmjs.org/react-style-singleton/-/react-style-singleton-2.2.1.tgz"
@@ -8320,11 +8281,6 @@ regenerate@^1.4.2:
   version "1.4.2"
   resolved "https://registry.npmjs.org/regenerate/-/regenerate-1.4.2.tgz"
   integrity sha512-zrceR/XhGYU/d/opr2EKO7aRHUeiBI8qjtfHqADTwZd6Szfy16la6kqD0MIUs5z5hx6AaKa+PixpPrR289+I0A==
-
-regenerator-runtime@^0.11.0:
-  version "0.11.1"
-  resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz"
-  integrity sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
 
 regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.9:
   version "0.13.9"
@@ -9273,322 +9229,6 @@ tslib@^2.0.0, tslib@^2.0.3, tslib@^2.1.0:
   version "2.4.0"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
-
-tsparticles-engine@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-engine/-/tsparticles-engine-2.1.0.tgz"
-  integrity sha512-hzqdFa1YXbmVxb5XXZd17OXLSjuH871Q9M//iOtPmyGe7nMgOxdAVCgF3/69KYCtQrMQFlulZdstIzya0lu5Yg==
-
-tsparticles-interaction-external-attract@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-interaction-external-attract/-/tsparticles-interaction-external-attract-2.1.0.tgz"
-  integrity sha512-iKE7RQxNG+DqK4UhJx+/wjlRfoGuwPeraTRW9xOMjhih8+WNnUa8otiRYEf+1UvrBkrbUapumoMM8PEk0opKHQ==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-interaction-external-bounce@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-interaction-external-bounce/-/tsparticles-interaction-external-bounce-2.1.0.tgz"
-  integrity sha512-oLNEnw6JFze2DKVuizKQix+qqhv+BN/z9U1HVMmolgoPqBot0A47LsQmmrnrq3cUTaXqraK+thlv7AmmM7ZCKQ==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-interaction-external-bubble@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-interaction-external-bubble/-/tsparticles-interaction-external-bubble-2.1.0.tgz"
-  integrity sha512-tsSs6ptQWCgxMAHqAiJGbug7AGnZAxFLGEYogC5Du7xo/FczkZiUdcCd2d1KTVvZV1/S311fpC9c4aX+GHDhUA==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-interaction-external-connect@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-interaction-external-connect/-/tsparticles-interaction-external-connect-2.1.0.tgz"
-  integrity sha512-rxWHDVRuCHvKzKWNPWmvfhN10xCQzVowZw48R7m6eB3JEWhIRIuPLikJkET1SeJ5RzUVN0xME4YLv30gdEn02Q==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-interaction-external-grab@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-interaction-external-grab/-/tsparticles-interaction-external-grab-2.1.0.tgz"
-  integrity sha512-C+KVpt0/RP3apKL8wQ71PQsQjTSzgqBWfvV9xJgcKuNAyf8T9BBNmlauziFkGxtTctEVKBQw9LpgKJJqRBkKQg==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-interaction-external-pause@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-interaction-external-pause/-/tsparticles-interaction-external-pause-2.1.0.tgz"
-  integrity sha512-xc+ar00dZRFSE2ABwbc96nYkLtf0/6tUS4rSFJZK8G/jblIfiAEd8Au8eXuv0lptdMYBCV3ac5HyZxZNFVKp+g==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-interaction-external-push@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-interaction-external-push/-/tsparticles-interaction-external-push-2.1.0.tgz"
-  integrity sha512-jQAVpW4CR9RDtj/alJrU4rnQb7TMXYw57ms3RXvL4WH0RTigFeQx6vAKRREWZi7n3QeInzMn1O7Ip2hmezjIEw==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-interaction-external-remove@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-interaction-external-remove/-/tsparticles-interaction-external-remove-2.1.0.tgz"
-  integrity sha512-w51f3tFIwk/vIIpvdWHnBLIGDX8TQYk1DaNCiQj2Oadk/HAYlsRtX9e0yuaPfs9Zt13s9kqWlAsFofMVR3RU6g==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-interaction-external-repulse@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-interaction-external-repulse/-/tsparticles-interaction-external-repulse-2.1.0.tgz"
-  integrity sha512-cuPNM5sgTZkWKHQCvLTsIDCynzQfWxoGNuQuFr3x6wmcVwZw0t7anMSedphY91Ps99BpHIq3KYtOpbh1A+xL9Q==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-interaction-external-trail@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-interaction-external-trail/-/tsparticles-interaction-external-trail-2.1.0.tgz"
-  integrity sha512-7YXlUwdiW89K05ZnnmNpP+HSLDjB2C05bgPNoXtE1X6PGKDt+sT3Hx1itTGpXXYT2w63ZmlVnZMz5Bocn50qWg==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-interaction-particles-attract@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-interaction-particles-attract/-/tsparticles-interaction-particles-attract-2.1.0.tgz"
-  integrity sha512-Jc2leXJB3St9NCKDmbgurqM0+ybYRDcorhVCr76KwgMIHJSRaR3ueC/xyLL3D96H/Ti/pMEsrQn0nqguNIMr3g==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-interaction-particles-collisions@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-interaction-particles-collisions/-/tsparticles-interaction-particles-collisions-2.1.0.tgz"
-  integrity sha512-fjE1SW83/EcCjqpgKGpeVMb1QQbgOPGY/XmmsLByvA9jiTeIzFfE8aBSNvdRTsh24uA7IXkv65husE3W2OUs1A==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-interaction-particles-links@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-interaction-particles-links/-/tsparticles-interaction-particles-links-2.1.0.tgz"
-  integrity sha512-IWNpViZG1F+RV9ZxQE1tXtDpzzXiOqf5Rjd5MqlElxTKK8QAemCVNMYMFPYDCovm2tAz91cga+X6kUR0fYELqg==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-move-base@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-move-base/-/tsparticles-move-base-2.1.0.tgz"
-  integrity sha512-i5s94AduKMz2iLJ5eiZK8eVkOLMdBoCkTvGr7TeIc+qC1THUoXarrf03PHgIrajwhWFTPhzaZ3SlSeO9bp3HFQ==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-move-parallax@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-move-parallax/-/tsparticles-move-parallax-2.1.0.tgz"
-  integrity sha512-KHM5DR+hVwNpCdxmAmspalDEeo8yC/keqyEC3qWfaZfeJDU1xcVkXQFEF7V1kGZ8vALXsQU+DIPkpYsYwfaGnw==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-particles.js@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-particles.js/-/tsparticles-particles.js-2.1.0.tgz"
-  integrity sha512-bmbl3Zz+Q3lfPDaQYBW2o0TeiZxchad4x+ZEq4L220cS+XEypyIGS+oMgbfCfH9q4CNDre/JzpJF/iEh/DyAyA==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-plugin-absorbers@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-plugin-absorbers/-/tsparticles-plugin-absorbers-2.1.0.tgz"
-  integrity sha512-PdfJGVANRTA0f8CXrxWvCOQuudCiegkCkSYymBLz+egUYDkIQDmk3rGNqqXNdSoiYSK4Ru0LmJzjq/7qIXYexQ==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-plugin-emitters@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-plugin-emitters/-/tsparticles-plugin-emitters-2.1.0.tgz"
-  integrity sha512-MugiVoAnNDjt7/5z41Jf4wDsHPINM3dydU3SaYMvjMwaghrnJ0Vnr4aVepyC6zlaCYLS3A3kW0B9WBXf3Alyvw==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-plugin-polygon-mask@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-plugin-polygon-mask/-/tsparticles-plugin-polygon-mask-2.1.0.tgz"
-  integrity sha512-3VzNH3MAJjDS4AiRkj3GZo6ULICMMjpyjlMjQ7ZzyLFZC80V5yROnE0oXc4PsHaC7zREKeTNugQpJxPwFSTtfw==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-shape-circle@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-shape-circle/-/tsparticles-shape-circle-2.1.0.tgz"
-  integrity sha512-kfkllmKQnGOD04YOahUI4/GkmiR4do1dhf5yx5J+4yr1hLwSdIzR6X+te+B6AwYT13P8zBIJATymysx1H1ONhA==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-shape-image@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-shape-image/-/tsparticles-shape-image-2.1.0.tgz"
-  integrity sha512-ldFqLk1PG/jo09uV/cLxvNTGVXCSY1Ucxkcsf1ai95j6smXqSSGX4wWLofBqDvB0/dds8aDSDFx7W4KgIjXf/A==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-shape-line@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-shape-line/-/tsparticles-shape-line-2.1.0.tgz"
-  integrity sha512-IrKLcRjTgRVHGkWK4VrO7dORzKfhG/43am1lvEtgKQeu02nKaGbL8G1QlyMYNIYdhWIZQqM9QS5Yv9QBDrSi/g==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-shape-polygon@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-shape-polygon/-/tsparticles-shape-polygon-2.1.0.tgz"
-  integrity sha512-DIpeJ1GAqHGRHhpRnKfRU9KAF2bgNrhJxE9kXtfbKD7dY5O1dW2FyO0LF4F56w99K9Dhvj/05A1MhyalMPwa7Q==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-shape-square@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-shape-square/-/tsparticles-shape-square-2.1.0.tgz"
-  integrity sha512-VK/QVHfp0mwBuyLEqH2mYWRi9iK+o9PmnAPbNGeTEl4lB8gVmHJVDZS44DB/IiqGNDy93lcssekcTiIxfHoWCQ==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-shape-star@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-shape-star/-/tsparticles-shape-star-2.1.0.tgz"
-  integrity sha512-Ml+a/eyhSlL/z9uPy5Uf7tiQdXE+Hh4ipIU+wR0K6NPdWpQ/kCehgDdi9GaqrSfKjaUd4jNuOXH3rJ3o7qtKUg==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-shape-text@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-shape-text/-/tsparticles-shape-text-2.1.0.tgz"
-  integrity sha512-uauUSN3iVXvbv9NIbOFM0/RjKy6mXLBD9hK91WvLgpKfyqfQreE1/hD5n9R26GHNJNSzaLuSvPdqJMBIoHrSbw==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-slim@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-slim/-/tsparticles-slim-2.1.0.tgz"
-  integrity sha512-7xu8YP25Y2Y/HuyDTj5mMxro0rRMuAt4xbD64WbEBnbrg+5NtRjKBJAdY+Z+YwoWPKhebCadIxdsZ/xrA/BnxQ==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-    tsparticles-interaction-external-attract "^2.1.0"
-    tsparticles-interaction-external-bounce "^2.1.0"
-    tsparticles-interaction-external-bubble "^2.1.0"
-    tsparticles-interaction-external-connect "^2.1.0"
-    tsparticles-interaction-external-grab "^2.1.0"
-    tsparticles-interaction-external-pause "^2.1.0"
-    tsparticles-interaction-external-push "^2.1.0"
-    tsparticles-interaction-external-remove "^2.1.0"
-    tsparticles-interaction-external-repulse "^2.1.0"
-    tsparticles-interaction-particles-attract "^2.1.0"
-    tsparticles-interaction-particles-collisions "^2.1.0"
-    tsparticles-interaction-particles-links "^2.1.0"
-    tsparticles-move-base "^2.1.0"
-    tsparticles-move-parallax "^2.1.0"
-    tsparticles-particles.js "^2.1.0"
-    tsparticles-shape-circle "^2.1.0"
-    tsparticles-shape-image "^2.1.0"
-    tsparticles-shape-line "^2.1.0"
-    tsparticles-shape-polygon "^2.1.0"
-    tsparticles-shape-square "^2.1.0"
-    tsparticles-shape-star "^2.1.0"
-    tsparticles-shape-text "^2.1.0"
-    tsparticles-updater-angle "^2.1.0"
-    tsparticles-updater-color "^2.1.0"
-    tsparticles-updater-life "^2.1.0"
-    tsparticles-updater-opacity "^2.1.0"
-    tsparticles-updater-out-modes "^2.1.0"
-    tsparticles-updater-size "^2.1.0"
-    tsparticles-updater-stroke-color "^2.1.0"
-
-tsparticles-updater-angle@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-updater-angle/-/tsparticles-updater-angle-2.1.0.tgz"
-  integrity sha512-u5SYyT2pwo0205gdf/FkWEEOKS1vjJUo+MsldRTFLNc710ompJvKq1cgsCmGyrmk7pv6CqPCRbEzxlMngM7lqA==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-updater-color@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-updater-color/-/tsparticles-updater-color-2.1.0.tgz"
-  integrity sha512-ePS68lPUqOvPu8LXuK4i00kAoA+izUwWJt6xUB9OaspyM656ZJznSa1oybMUJlzLsEyCw4oIWNNpfy7TqoAcNg==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-updater-life@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-updater-life/-/tsparticles-updater-life-2.1.0.tgz"
-  integrity sha512-z9MmdjNqOunobLEqEGKsV8kLwKwpJ1zD8HkYmT3ZT9eOf1EfL8LOyn1kzXF7312w8DAn3eWQ6thRPHiIAjUqfw==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-updater-opacity@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-updater-opacity/-/tsparticles-updater-opacity-2.1.0.tgz"
-  integrity sha512-WDErsGD8WCqOxhIT7JD2CGFUATApN5aQqkRkcoKydzXO3Mrp85PoEnBb56JM7qZcU2LRW7p3MgxecfJ8V9ZoKQ==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-updater-out-modes@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-updater-out-modes/-/tsparticles-updater-out-modes-2.1.0.tgz"
-  integrity sha512-OJhezxMQ8iefxwxAxY4rxbhJvQ8NVKEP9uWHeQyvf/pBGlBJXUiUomExis/X94pk8VQTi6bP2qaan1mlqULU/Q==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-updater-roll@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-updater-roll/-/tsparticles-updater-roll-2.1.0.tgz"
-  integrity sha512-oGn1LfK2ukiIhGoEg2Ev009RFfre7tbIh+nRjl8h6t742Xbn09zRfgQs/oHhc0g1NqC8BcVCL5rb8aC6K4BXDg==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-updater-size@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-updater-size/-/tsparticles-updater-size-2.1.0.tgz"
-  integrity sha512-2FV63By++YJsM26Kxoh7BOsXTsfGlIp5akYna/sFhSoPte4orK6jT0sCLTcU7/IkbXB6snclbn5n6LqgkCFIuw==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-updater-stroke-color@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-updater-stroke-color/-/tsparticles-updater-stroke-color-2.1.0.tgz"
-  integrity sha512-VAyILxWjK2VxPl3QBzMrdp3wFFtbjJj6N5Kr2x455SKkfwY0fFqbKwy1Cs/Sps1GPrtYY9R1S4i1wjRmO1H4UA==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-updater-tilt@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-updater-tilt/-/tsparticles-updater-tilt-2.1.0.tgz"
-  integrity sha512-/weo2BDJxTZ+bL/IzL4JwRHM5zSo/tK5IrDCCWqA1OHDr7mxK/vy5daG9sFEBdraSJq5wT+NaZxVvRm7Fr78Mg==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-updater-twinkle@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-updater-twinkle/-/tsparticles-updater-twinkle-2.1.0.tgz"
-  integrity sha512-L9FnKsfFPn0Gt8o2tnLNilvkdKrmsVyJ1JChFcEi8yKNUu6ODllaJJ8Wa+fAOeg8GlbXO3SAInSUJGWXfeGLIg==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles-updater-wobble@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles-updater-wobble/-/tsparticles-updater-wobble-2.1.0.tgz"
-  integrity sha512-1efxkFb9pE3LlspmrAX94NfgiCEYqn2LnQGZEDNzJWzvP2xG24WDx1/l62KTpNqsf9sIvH+KihzT0UQO1AHeEw==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-
-tsparticles@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/tsparticles/-/tsparticles-2.1.0.tgz"
-  integrity sha512-LT1MOtsMAfNTDWbgz1+7WIsnA76p3JLo+4b5MYW87JG2B17B0OHC1/jP+SuL9QPdNxxfs7bwAvvOnjBpcUqL8g==
-  dependencies:
-    tsparticles-engine "^2.1.0"
-    tsparticles-interaction-external-trail "^2.1.0"
-    tsparticles-plugin-absorbers "^2.1.0"
-    tsparticles-plugin-emitters "^2.1.0"
-    tsparticles-plugin-polygon-mask "^2.1.0"
-    tsparticles-slim "^2.1.0"
-    tsparticles-updater-roll "^2.1.0"
-    tsparticles-updater-tilt "^2.1.0"
-    tsparticles-updater-twinkle "^2.1.0"
-    tsparticles-updater-wobble "^2.1.0"
 
 tsutils@^3.21.0:
   version "3.21.0"
