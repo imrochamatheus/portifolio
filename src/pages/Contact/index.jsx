@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  Flex,
   FormControl,
   FormLabel,
   Heading,
@@ -62,205 +61,213 @@ export default function Contact() {
         initial={{ marginLeft: "100%" }}
         animate={{ marginLeft: 0 }}
         exit={{ marginLeft: "100%" }}
+        overflow="auto"
+        height="100vh"
+        css={{
+          "&::-webkit-scrollbar": {
+            width: "5px",
+            height: "10px",
+          },
+          "&::-webkit-scrollbar-track": {
+            width: "6px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            background: "rgb(196, 196, 196)",
+            borderRadius: "24px",
+          },
+        }}
       >
-        <Flex
-          bg="black"
-          align="center"
-          justify="center"
-          id="contact"
-          pb={{ base: 24, md: 0 }}
+        <AnimatedStars />
+        <Box
+          top="0"
+          borderRadius="lg"
+          m={{ base: 5, md: 16, lg: 10 }}
+          p={{ base: 5, lg: 16 }}
         >
-          <AnimatedStars />
-          <Box
-            borderRadius="lg"
-            m={{ base: 5, md: 16, lg: 10 }}
-            p={{ base: 5, lg: 16 }}
-          >
-            <Box>
-              <VStack spacing={{ base: 4, md: 8, lg: 10 }}>
-                <Heading
-                  fontSize={{
-                    base: "xl",
-                    md: "3xl",
-                  }}
-                >
-                  Deixe sua mensagem!
-                </Heading>
+          <Box>
+            <VStack spacing={{ base: 4, md: 8, lg: 10 }} pb={24}>
+              <Heading
+                fontSize={{
+                  base: "xl",
+                  md: "3xl",
+                }}
+              >
+                Deixe sua mensagem!
+              </Heading>
 
+              <Stack
+                spacing={{ base: 4, md: 8, lg: 20 }}
+                direction={{ base: "column", md: "row" }}
+              >
                 <Stack
-                  spacing={{ base: 4, md: 8, lg: 20 }}
-                  direction={{ base: "column", md: "row" }}
+                  align="center"
+                  justify="space-around"
+                  direction={{ base: "row", md: "column" }}
                 >
-                  <Stack
-                    align="center"
-                    justify="space-around"
-                    direction={{ base: "row", md: "column" }}
+                  <Tooltip
+                    label={hasCopied ? "Email copiado!" : "Copiar email"}
+                    closeOnClick={false}
+                    hasArrow
                   >
-                    <Tooltip
-                      label={hasCopied ? "Email copiado!" : "Copiar email"}
-                      closeOnClick={false}
-                      hasArrow
-                    >
+                    <IconButton
+                      aria-label="email"
+                      variant="ghost"
+                      size="lg"
+                      fontSize="3xl"
+                      color="rgb(196, 196, 196)"
+                      icon={<MdEmail />}
+                      _hover={{
+                        color: "#00f2ea",
+                        transform: "scale(1.2)",
+                      }}
+                      onClick={onCopy}
+                      isRound
+                    />
+                  </Tooltip>
+
+                  <Tooltip label={"Visitar perfil no GitHub"}>
+                    <Link href="#">
                       <IconButton
-                        aria-label="email"
+                        aria-label="github"
                         variant="ghost"
                         size="lg"
                         fontSize="3xl"
                         color="rgb(196, 196, 196)"
-                        icon={<MdEmail />}
+                        icon={<BsGithub />}
                         _hover={{
                           color: "#00f2ea",
                           transform: "scale(1.2)",
                         }}
-                        onClick={onCopy}
                         isRound
+                        onClick={() =>
+                          window.open(
+                            "https://github.com/imrochamatheus",
+                            "_blank"
+                          )
+                        }
                       />
-                    </Tooltip>
+                    </Link>
+                  </Tooltip>
 
-                    <Tooltip label={"Visitar perfil no GitHub"}>
-                      <Link href="#">
-                        <IconButton
-                          aria-label="github"
-                          variant="ghost"
-                          size="lg"
-                          fontSize="3xl"
-                          color="rgb(196, 196, 196)"
-                          icon={<BsGithub />}
-                          _hover={{
-                            color: "#00f2ea",
-                            transform: "scale(1.2)",
-                          }}
-                          isRound
-                          onClick={() =>
-                            window.open(
-                              "https://github.com/imrochamatheus",
-                              "_blank"
-                            )
-                          }
-                        />
-                      </Link>
-                    </Tooltip>
+                  <Tooltip label={"Copiar email"}>
+                    <Link href="#">
+                      <IconButton
+                        aria-label="twitter"
+                        variant="ghost"
+                        size="lg"
+                        color="rgb(196, 196, 196)"
+                        icon={<IoLogoWhatsapp size="28px" />}
+                        _hover={{
+                          color: "#00f2ea",
+                          transform: "scale(1.2)",
+                        }}
+                        isRound
+                        onClick={() =>
+                          window.open(
+                            "https://api.whatsapp.com/send?phone=5571988119884",
+                            "_blank"
+                          )
+                        }
+                      />
+                    </Link>
+                  </Tooltip>
 
-                    <Tooltip label={"Copiar email"}>
-                      <Link href="#">
-                        <IconButton
-                          aria-label="twitter"
-                          variant="ghost"
-                          size="lg"
-                          color="rgb(196, 196, 196)"
-                          icon={<IoLogoWhatsapp size="28px" />}
-                          _hover={{
-                            color: "#00f2ea",
-                            transform: "scale(1.2)",
-                          }}
-                          isRound
-                          onClick={() =>
-                            window.open(
-                              "https://api.whatsapp.com/send?phone=5571988119884",
-                              "_blank"
-                            )
-                          }
-                        />
-                      </Link>
-                    </Tooltip>
+                  <Tooltip label={"Visitar perfil no Linkedin"}>
+                    <Link href="#">
+                      <IconButton
+                        aria-label="linkedin"
+                        variant="ghost"
+                        size="lg"
+                        icon={<BsLinkedin size="28px" />}
+                        _hover={{
+                          color: "#00f2ea",
+                          transform: "scale(1.2)",
+                        }}
+                        isRound
+                        onClick={() =>
+                          window.open(
+                            "https://www.linkedin.com/in/matheus-rocha-in/",
+                            "_blank"
+                          )
+                        }
+                      />
+                    </Link>
+                  </Tooltip>
+                </Stack>
 
-                    <Tooltip label={"Visitar perfil no Linkedin"}>
-                      <Link href="#">
-                        <IconButton
-                          aria-label="linkedin"
-                          variant="ghost"
-                          size="lg"
-                          icon={<BsLinkedin size="28px" />}
-                          _hover={{
-                            color: "#00f2ea",
-                            transform: "scale(1.2)",
-                          }}
-                          isRound
-                          onClick={() =>
-                            window.open(
-                              "https://www.linkedin.com/in/matheus-rocha-in/",
-                              "_blank"
-                            )
-                          }
-                        />
-                      </Link>
-                    </Tooltip>
-                  </Stack>
+                <Box
+                  bg={useColorModeValue("white", "gray.700")}
+                  borderRadius="lg"
+                  p={8}
+                  color={useColorModeValue("gray.700", "whiteAlpha.900")}
+                  shadow="base"
+                >
+                  <form onSubmit={sendEmail} ref={form}>
+                    <VStack spacing={5}>
+                      <FormControl isRequired>
+                        <FormLabel>Name</FormLabel>
 
-                  <Box
-                    bg={useColorModeValue("white", "gray.700")}
-                    borderRadius="lg"
-                    p={8}
-                    color={useColorModeValue("gray.700", "whiteAlpha.900")}
-                    shadow="base"
-                  >
-                    <form onSubmit={sendEmail} ref={form}>
-                      <VStack spacing={5}>
-                        <FormControl isRequired>
-                          <FormLabel>Name</FormLabel>
-
-                          <InputGroup>
-                            <InputLeftElement children={<BsPerson />} />
-                            <Input
-                              type="text"
-                              name="name"
-                              placeholder="Seu nome"
-                              _focus={{
-                                borderColor: "white",
-                              }}
-                            />
-                          </InputGroup>
-                        </FormControl>
-
-                        <FormControl isRequired>
-                          <FormLabel>Email</FormLabel>
-
-                          <InputGroup>
-                            <InputLeftElement children={<MdOutlineEmail />} />
-                            <Input
-                              type="email"
-                              name="email"
-                              placeholder="Seu Email"
-                              _focus={{
-                                borderColor: "white",
-                              }}
-                            />
-                          </InputGroup>
-                        </FormControl>
-
-                        <FormControl isRequired>
-                          <FormLabel>Message</FormLabel>
-
-                          <Textarea
-                            name="message"
-                            placeholder="Mensagem..."
-                            rows={6}
-                            resize="none"
+                        <InputGroup>
+                          <InputLeftElement children={<BsPerson />} />
+                          <Input
+                            type="text"
+                            name="name"
+                            placeholder="Seu nome"
                             _focus={{
                               borderColor: "white",
                             }}
                           />
-                        </FormControl>
+                        </InputGroup>
+                      </FormControl>
 
-                        <Button
-                          type="submit"
-                          colorScheme="blue"
-                          bg="blue.400"
-                          color="white"
-                          _hover={{
-                            bg: "blue.500",
+                      <FormControl isRequired>
+                        <FormLabel>Email</FormLabel>
+
+                        <InputGroup>
+                          <InputLeftElement children={<MdOutlineEmail />} />
+                          <Input
+                            type="email"
+                            name="email"
+                            placeholder="Seu Email"
+                            _focus={{
+                              borderColor: "white",
+                            }}
+                          />
+                        </InputGroup>
+                      </FormControl>
+
+                      <FormControl isRequired>
+                        <FormLabel>Message</FormLabel>
+
+                        <Textarea
+                          name="message"
+                          placeholder="Mensagem..."
+                          rows={6}
+                          resize="none"
+                          _focus={{
+                            borderColor: "white",
                           }}
-                        >
-                          Enviar
-                        </Button>
-                      </VStack>
-                    </form>
-                  </Box>
-                </Stack>
-              </VStack>
-            </Box>
+                        />
+                      </FormControl>
+
+                      <Button
+                        type="submit"
+                        colorScheme="blue"
+                        bg="blue.400"
+                        color="white"
+                        _hover={{
+                          bg: "blue.500",
+                        }}
+                      >
+                        Enviar
+                      </Button>
+                    </VStack>
+                  </form>
+                </Box>
+              </Stack>
+            </VStack>
           </Box>
-        </Flex>
+        </Box>
       </Box>
     </AnimatePresence>
   );
