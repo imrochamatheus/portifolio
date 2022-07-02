@@ -18,13 +18,16 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
+import AnimatedStars from "../../components/AnimatedStars";
+
 import { useRef } from "react";
 import { BsGithub, BsLinkedin, BsPerson } from "react-icons/bs";
 import { MdEmail, MdOutlineEmail } from "react-icons/md";
-import { IoLogoWhatsapp } from "react-icons/io";
-import emailjs from "emailjs-com";
 import { motion, AnimatePresence } from "framer-motion";
-import AnimatedStars from "../../components/AnimatedStars";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { toast } from "react-toastify";
+
+import emailjs from "emailjs-com";
 
 export default function Contact() {
   const { hasCopied, onCopy } = useClipboard("im.rochamatheus@gmail.com");
@@ -42,10 +45,10 @@ export default function Contact() {
       )
       .then(
         (result) => {
-          alert("Mensagem enviada");
+          toast.success("Mensagem enviada! Obrigado pelo contato.");
         },
         (error) => {
-          alert(error.message);
+          toast.error(error.message);
         }
       );
 
