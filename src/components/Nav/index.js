@@ -17,6 +17,7 @@ const Nav = () => {
         borderTop="1px solid"
         borderColor="whiteAlpha.400"
         background="black"
+        zIndex={2}
       >
         <Breadcrumb
           fontWeight="medium"

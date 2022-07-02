@@ -20,7 +20,6 @@ import { FaCss3Alt } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
 import { FaJava } from "react-icons/fa";
 import { FaLaravel } from "react-icons/fa";
-// import { keyframes, Box } from "@chakra-ui/react";
 import AnimatedIcon from "../../components/AnimatedIcon";
 
 const IconsLine = () => {
@@ -90,18 +89,6 @@ const IconsLine = () => {
     FaLaravel,
   ];
 
-  // const an1 = keyframes`
-  //   0% { transform: translateX(100%); }
-  //   100% { transform: translateX(-100%); }
-  // `;
-  // const an2 = keyframes`
-  //   0% { transform: translateX(0); }
-  //   100% { transform: translateX(-200%); }
-  // `;
-
-  // const animation = `${an1} 20s linear infinite`;
-  // const animation2 = `${an2} 20s linear infinite`;
-
   return (
     <Flex
       w="100%"
@@ -112,7 +99,7 @@ const IconsLine = () => {
       overflow="hidden"
     >
       <Flex>
-        {icons.map((icon, i) => (
+        {icons.map((_, i) => (
           <AnimatedIcon
             reactIcon={icons[Math.floor(Math.random() * 20)]}
             key={i}

@@ -37,6 +37,7 @@ const Item = ({ label, url, icon }) => {
       <BreadcrumbLink
         as={Link}
         to={url}
+        state={{ prevPath: location.pathname }}
         ref={navLink}
         rounded="md"
         _hover={{ color: "#00f2ea" }}

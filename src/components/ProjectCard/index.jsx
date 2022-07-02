@@ -38,6 +38,8 @@ const ProjectCard = ({
       {...(i % 2 ? { offsetX: "-50%" } : { offsetX: "50%" })}
       in={cardViewport}
       transition={`all 2s`}
+      zIndex={1}
+      position="relative"
     >
       <Stack
         borderRadius="lg"

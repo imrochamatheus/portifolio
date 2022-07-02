@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const AnimatedIcon = ({ reactIcon }) => {
   return (
-    <Box color="rgba(255,255,255,0.1)" as={motion.div} userSelect="none">
+    <Box color="rgba(255,255,255,0.08)" as={motion.div} userSelect="none">
       <Icon
         as={reactIcon}
         transition="1s"

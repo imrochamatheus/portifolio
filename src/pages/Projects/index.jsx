@@ -1,68 +1,84 @@
-import { Flex, Box } from "@chakra-ui/react";
+import { Box, Slide } from "@chakra-ui/react";
 import ProjectCard from "../../components/ProjectCard";
+import Astro from "../../components/Astro";
 
 import { BsChevronDoubleUp } from "react-icons/bs";
+import AnimatedStars from "../../components/AnimatedStars";
 import { motion } from "framer-motion";
 import { Link } from "@chakra-ui/react";
 import { Icon } from "@chakra-ui/react";
-import stars from "../../assets/img/stars.gif";
-
+import { useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { projects } from "./projects";
+import { paths } from "../../assets/utils";
 
 const Projects = () => {
+  const constraintsRef = useRef(null);
+
+  const {
+    pathname,
+    state: { prevPath },
+  } = useLocation();
+
   return (
-    <Flex
-      h="100vh"
-      overflowY="auto"
-      w="100%"
-      overflowX="hidden"
-      direction="column"
-      align="center"
-      position="relative"
-      gap={5}
-      pt={8}
-      pb={24}
-      scrollBehavior="smooth"
-      style={{
-        backgroundImage: `url(${stars})`,
-        backgroundSize: "cover",
-      }}
+    <Box
+      as={Slide}
+      in={true}
+      direction={paths[pathname] < paths[prevPath] ? "left" : "right"}
     >
       <Box
-        position="relative"
-        id="top"
-        direction={{ base: "column", md: "row" }}
-        px={6}
-        justify="space-between"
-        alignItems="center"
+        h="100vh"
+        overflowY="auto"
         w="100%"
-        maxW={{ base: "100%", md: "700px" }}
-        initial="hidden"
-        animate="visible"
-      >
-        {projects.map(
-          ({ link, title, description, tags, demo, code, img }, i) => (
-            <ProjectCard
-              key={i}
-              {...{ link, title, description, tags, demo, code, img, i }}
-            />
-          )
-        )}
-      </Box>
-      <Box
+        overflowX="hidden"
+        direction="column"
+        align="center"
         position="relative"
+        gap={5}
+        pt={8}
+        pb={24}
+        scrollBehavior="smooth"
         as={motion.div}
-        whileHover={{ scale: 1.5 }}
-        whileTap={{
-          scale: 0.8,
-          borderRadius: "100%",
-        }}
+        ref={constraintsRef}
       >
-        <Link href="#top">
-          <Icon as={BsChevronDoubleUp} fontSize={24} my={1} color="#00f2ea" />
-        </Link>
+        <Box
+          position="relative"
+          id="top"
+          direction={{ base: "column", md: "row" }}
+          px={6}
+          justify="space-between"
+          alignItems="center"
+          w="100%"
+          maxW={{ base: "100%", md: "700px" }}
+          initial="hidden"
+          animate="visible"
+        >
+          <Astro wrapper={constraintsRef} />
+          {projects.map(
+            ({ link, title, description, tags, demo, code, img }, i) => (
+              <ProjectCard
+                key={i}
+                {...{ link, title, description, tags, demo, code, img, i }}
+              />
+            )
+          )}
+        </Box>
+        <Box
+          position="relative"
+          as={motion.div}
+          whileHover={{ scale: 1.5 }}
+          whileTap={{
+            scale: 0.8,
+            borderRadius: "100%",
+          }}
+        >
+          <Link href="#top">
+            <Icon as={BsChevronDoubleUp} fontSize={24} my={1} color="#00f2ea" />
+          </Link>
+        </Box>
+        <AnimatedStars />
       </Box>
-    </Flex>
+    </Box>
   );
 };
 
