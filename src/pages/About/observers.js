@@ -1,4 +1,4 @@
 import { useInViewport } from "react-in-viewport";
 
 export const useObserver = (ref) =>
-  useInViewport(ref, { rootMargin: "-20px" }, { disconnectOnLeave: false }, {});
+  useInViewport(ref, { rootMargin: "-50px" }, { disconnectOnLeave: false }, {});

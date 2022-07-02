@@ -12,21 +12,10 @@ import Typewriter from "typewriter-effect";
 
 import profile from "../../assets/img/home-animation-removed.gif";
 import IconsBackground from "../../components/IconsBackground";
-import { paths } from "../../assets/utils";
-import { useLocation } from "react-router-dom";
 
 const Home = () => {
-  const {
-    pathname,
-    state: { prevPath },
-  } = useLocation();
-
   return (
-    <Box
-      as={Slide}
-      in={true}
-      direction={paths[pathname] < paths[prevPath] ? "left" : "right"}
-    >
+    <Box as={Slide} in={true} direction="left">
       <Flex
         minH="100vh"
         w="100%"
