@@ -49,6 +49,7 @@ const About = () => {
   const aboutRef = useRef(null);
   const hobbiesRef = useRef(null);
   const presentationRef = useRef(null);
+  const { pathname, state } = useLocation();
 
   const certifications = useMemo(() => {
     return [
@@ -69,16 +70,15 @@ const About = () => {
   const { inViewport: skillsViewPort } = useObserver(skillsRef);
   const wrapperRef = useRef(null);
 
-  const {
-    pathname,
-    state: { prevPath },
-  } = useLocation();
-
   return (
     <Box
       as={Slide}
       in={true}
-      direction={paths[pathname] < paths[prevPath] ? "left" : "right"}
+      direction={
+        state?.prevPath && paths[pathname] < paths[state.prevPath]
+          ? "left"
+          : "right"
+      }
     >
       <Flex
         gap={5}
@@ -92,6 +92,19 @@ const About = () => {
         position="relative"
         scrollBehavior="smooth"
         ref={wrapperRef}
+        css={{
+          "&::-webkit-scrollbar": {
+            width: "5px",
+            height: "10px",
+          },
+          "&::-webkit-scrollbar-track": {
+            width: "6px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            background: "rgb(196, 196, 196)",
+            borderRadius: "24px",
+          },
+        }}
       >
         <Astro wrapper={wrapperRef} />
         <Stack

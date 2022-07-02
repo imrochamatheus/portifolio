@@ -25,17 +25,10 @@ import { MdEmail, MdOutlineEmail } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
 import emailjs from "emailjs-com";
 import AnimatedStars from "../../components/AnimatedStars";
-import { useLocation } from "react-router-dom";
-import { paths } from "../../assets/utils";
 
 export default function Contact() {
   const { hasCopied, onCopy } = useClipboard("im.rochamatheus@gmail.com");
   const form = useRef();
-
-  const {
-    pathname,
-    state: { prevPath },
-  } = useLocation();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -60,11 +53,7 @@ export default function Contact() {
   };
 
   return (
-    <Box
-      as={Slide}
-      in={true}
-      direction={paths[pathname] < paths[prevPath] ? "left" : "right"}
-    >
+    <Box as={Slide} in={true} direction="right">
       <Flex
         bg="black"
         align="center"
@@ -252,7 +241,6 @@ export default function Contact() {
                         _hover={{
                           bg: "blue.500",
                         }}
-                        isFullWidth
                       >
                         Enviar
                       </Button>

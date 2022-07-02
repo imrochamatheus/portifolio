@@ -35,9 +35,10 @@ const ProjectCard = ({
       py={6}
       as={SlideFade}
       ref={cardRef}
-      {...(i % 2 ? { offsetX: "-50%" } : { offsetX: "50%" })}
+      {...(i % 2 ? { offsetX: 50 } : { offsetX: -50 })}
+      // offsetY={50}
       in={cardViewport}
-      transition={`all 2s`}
+      transition={`all 1s`}
       zIndex={1}
       position="relative"
     >

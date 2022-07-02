@@ -15,16 +15,17 @@ import { paths } from "../../assets/utils";
 const Projects = () => {
   const constraintsRef = useRef(null);
 
-  const {
-    pathname,
-    state: { prevPath },
-  } = useLocation();
+  const { pathname, state } = useLocation();
 
   return (
     <Box
       as={Slide}
       in={true}
-      direction={paths[pathname] < paths[prevPath] ? "left" : "right"}
+      direction={
+        state?.prevPath && paths[pathname] < paths[state.prevPath]
+          ? "left"
+          : "right"
+      }
     >
       <Box
         h="100vh"
@@ -40,6 +41,19 @@ const Projects = () => {
         scrollBehavior="smooth"
         as={motion.div}
         ref={constraintsRef}
+        css={{
+          "&::-webkit-scrollbar": {
+            width: "5px",
+            height: "10px",
+          },
+          "&::-webkit-scrollbar-track": {
+            width: "6px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            background: "rgb(196, 196, 196)",
+            borderRadius: "24px",
+          },
+        }}
       >
         <Box
           position="relative"
