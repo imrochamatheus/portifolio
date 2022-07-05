@@ -65,10 +65,20 @@ const ProjectCard = ({
                 as={"iframe"}
                 src={link}
                 width="100%"
+                overflow="hidden"
                 h={{ base: "200px", md: "300px" }}
                 title={title}
+                scrolling="no"
               />
             ) : (
+              // <iframe
+              //   src={link}
+              //   width="100%"
+              //   height="300px"
+              //   frameborder="0"
+              //   scrolling="no"
+              //   frameborder="0"
+              // />
               <Image src={img} alt={title} width="100%" height="100%" />
             )}
           </Flex>
