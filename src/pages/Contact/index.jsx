@@ -149,7 +149,7 @@ export default function Contact() {
                     </Link>
                   </Tooltip>
 
-                  <Tooltip label={"Copiar email"}>
+                  <Tooltip label={"Entrar em contato via whatsApp"}>
                     <Link href="#">
                       <IconButton
                         aria-label="twitter"
