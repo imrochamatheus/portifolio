@@ -188,15 +188,14 @@ const About = () => {
               </Text>
               <Text fontSize={{ base: "xs", md: "sm" }} mb={2}>
                 Sou Técnico em Desenvolvimento de Sistemas pelo Senai-BA e
-                Desenvolvedor Front End pela Kenzie Academy Brasil, onde
-                atualmente presto serviços como monitor de ensino, ou Peer
-                Coach, como somos chamados.
+                Desenvolvedor Full Stack pela Kenzie Academy Brasil, onde também
+                prestei serviços como monitor de ensino, ou Peer Coach, como
+                éramos chamados.
               </Text>
               <Text fontSize={{ base: "xs", md: "sm" }}>
-                Atualmente, estudo desenvolvimento web full stack também na
-                Kenzie, e estou sempre em busca de conhecimento extra onde quer
-                que seja. Então já sabe: Aprendeu uma coisa legal? Me ensina
-                também!
+                Atualmente, atuo como desenvolvedor Front-End, e estou sempre em
+                busca de conhecimento extra onde quer que seja. Então já sabe:
+                Aprendeu uma coisa legal? Me ensina também!
               </Text>
             </StackItem>
 

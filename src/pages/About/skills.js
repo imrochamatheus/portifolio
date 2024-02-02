@@ -1,36 +1,31 @@
-import { IoLogoJavascript } from "react-icons/io5";
+import { IoLogoAngular, IoLogoJavascript, IoLogoSass } from "react-icons/io5";
 import { IoLogoHtml5 } from "react-icons/io5";
 import { IoLogoCss3 } from "react-icons/io5";
 import { IoLogoReact } from "react-icons/io5";
 import { SiRedux } from "react-icons/si";
-import { SiNodemon } from "react-icons/si";
-import { SiPhp } from "react-icons/si";
 import { SiBootstrap } from "react-icons/si";
 import { SiMaterialui } from "react-icons/si";
 import { SiChakraui } from "react-icons/si";
-import { SiMysql } from "react-icons/si";
 import { IoLogoNodejs } from "react-icons/io5";
+import { FiFigma } from "react-icons/fi";
+import { SiStorybook } from "react-icons/si";
+import { SiAntdesign } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
+import { FaLess } from "react-icons/fa";
+import { FaGit } from "react-icons/fa";
 
 export const skills = [
   {
-    label: "HTML",
-    icon: IoLogoHtml5,
-  },
-  {
-    label: "CSS",
-    icon: IoLogoCss3,
-  },
-  {
-    label: "Bootstrap",
-    icon: SiBootstrap,
+    label: "TypeScript",
+    icon: SiTypescript,
   },
   {
     label: "JavaScript",
     icon: IoLogoJavascript,
   },
   {
-    label: "PHP",
-    icon: SiPhp,
+    label: "Angular",
+    icon: IoLogoAngular,
   },
   {
     label: "React.js",
@@ -41,6 +36,26 @@ export const skills = [
     icon: SiRedux,
   },
   {
+    label: "Node.js",
+    icon: IoLogoNodejs,
+  },
+  {
+    label: "HTML5",
+    icon: IoLogoHtml5,
+  },
+  {
+    label: "CSS3",
+    icon: IoLogoCss3,
+  },
+  {
+    label: "SASS",
+    icon: IoLogoSass,
+  },
+  {
+    label: "LESS",
+    icon: FaLess,
+  },
+  {
     label: "Material Ui",
     icon: SiMaterialui,
   },
@@ -49,15 +64,23 @@ export const skills = [
     icon: SiChakraui,
   },
   {
-    label: "Node.js",
-    icon: IoLogoNodejs,
+    label: "Ant Design",
+    icon: SiAntdesign,
   },
   {
-    label: "Nodemon",
-    icon: SiNodemon,
+    label: "Bootstrap",
+    icon: SiBootstrap,
   },
   {
-    label: "MySQL",
-    icon: SiMysql,
+    label: "Storybook",
+    icon: SiStorybook,
+  },
+  {
+    label: "Figma",
+    icon: FiFigma,
+  },
+  {
+    label: "Git",
+    icon: FaGit,
   },
 ];
