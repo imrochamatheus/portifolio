@@ -13,6 +13,7 @@ import { SiAntdesign } from "react-icons/si";
 import { SiTypescript } from "react-icons/si";
 import { FaLess } from "react-icons/fa";
 import { FaGit } from "react-icons/fa";
+import { SiJest } from "react-icons/si";
 
 export const skills = [
   {
@@ -38,6 +39,10 @@ export const skills = [
   {
     label: "Node.js",
     icon: IoLogoNodejs,
+  },
+  {
+    label: "Jest",
+    icon: SiJest,
   },
   {
     label: "HTML5",
