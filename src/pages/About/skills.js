@@ -6,14 +6,14 @@ import { SiRedux } from "react-icons/si";
 import { SiBootstrap } from "react-icons/si";
 import { SiMaterialui } from "react-icons/si";
 import { SiChakraui } from "react-icons/si";
-import { IoLogoNodejs } from "react-icons/io5";
 import { FiFigma } from "react-icons/fi";
+import { FaLess } from "react-icons/fa";
+import { SiJest } from "react-icons/si";
+import { FaGit } from "react-icons/fa";
 import { SiStorybook } from "react-icons/si";
 import { SiAntdesign } from "react-icons/si";
 import { SiTypescript } from "react-icons/si";
-import { FaLess } from "react-icons/fa";
-import { FaGit } from "react-icons/fa";
-import { SiJest } from "react-icons/si";
+import { IoLogoNodejs } from "react-icons/io5";
 
 export const skills = [
   {
